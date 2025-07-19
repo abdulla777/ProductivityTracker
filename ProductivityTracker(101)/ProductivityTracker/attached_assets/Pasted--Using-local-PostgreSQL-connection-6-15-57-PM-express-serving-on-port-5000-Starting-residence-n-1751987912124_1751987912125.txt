@@ -1,0 +1,436 @@
+
+Using local PostgreSQL connection
+6:15:57 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Error in checkExpiringResidences: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.checkExpiringResidences (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:794:29)
+    at async ResidenceNotificationService.checkAndSendNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/residence-notification-service.ts:49:25) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+Residence notification check completed
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+6:16:15 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:15 PM [express] GET /api/users 500 in 56ms :: {"message":"Internal server error","error":"colum…
+6:16:15 PM [express] GET /api/projects 200 in 70ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+6:16:15 PM [express] GET /api/attendance/daily 200 in 62ms :: []
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:15 PM [express] GET /api/users/1/notifications 500 in 6ms :: {"message":"Internal server error"…
+6:16:15 PM [express] GET /api/project-phases 200 in 9ms
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:20 PM [express] GET /api/users/1/notifications 500 in 4ms :: {"message":"Internal server error"…
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:20 PM [express] GET /api/users 500 in 28ms :: {"message":"Internal server error","error":"colum…
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:24 PM [express] GET /api/users/1/notifications 500 in 36ms :: {"message":"Internal server error…
+6:16:24 PM [express] GET /api/clients 200 in 36ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contac…
+6:16:24 PM [express] GET /api/clients/2/projects 200 in 7ms :: [{"id":2,"title":"مجمع مكاتب الأعمال"…
+6:16:24 PM [express] GET /api/clients/3/projects 200 in 38ms :: [{"id":3,"title":"فيلا عائلية فاخرة"…
+6:16:24 PM [express] GET /api/clients/1/projects 200 in 38ms :: [{"id":1,"title":"برج الريادة السكني…
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:26 PM [express] GET /api/users/1/notifications 500 in 4ms :: {"message":"Internal server error"…
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:26 PM [express] GET /api/users 500 in 3ms :: {"message":"Internal server error","error":"column…
+6:16:26 PM [express] GET /api/attendance/daily 304 in 6ms :: []
+6:16:27 PM [express] GET /api/tasks 200 in 5ms :: []
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:27 PM [express] GET /api/users 500 in 3ms :: {"message":"Internal server error","error":"column…
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:32 PM [express] GET /api/users/1/notifications 500 in 30ms :: {"message":"Internal server error…
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:32 PM [express] GET /api/users 500 in 33ms :: {"message":"Internal server error","error":"colum…
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:33 PM [express] GET /api/users/1/notifications 500 in 36ms :: {"message":"Internal server error…
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:16:33 PM [express] GET /api/users 500 in 34ms :: {"message":"Internal server error","error":"colum…
+Error: error: column "is_active" of relation "users" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createUser (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:152:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:55:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 127,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '91',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+6:17:08 PM [express] POST /api/users 500 in 35ms :: {"message":"Internal server error","error":"colu…
+6:17:41 PM [express] GET /api/project-phases 200 in 12ms
+Error: error: column "reference_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:438:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:388:27)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 112,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '53',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:17:41 PM [express] GET /api/users/1/notifications 500 in 42ms :: {"message":"Internal server error…
+Error: error: column "is_active" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllUsers (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:169:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:37:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 109,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '77',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:17:41 PM [express] GET /api/users 500 in 50ms :: {"message":"Internal server error","error":"colum…
+
+

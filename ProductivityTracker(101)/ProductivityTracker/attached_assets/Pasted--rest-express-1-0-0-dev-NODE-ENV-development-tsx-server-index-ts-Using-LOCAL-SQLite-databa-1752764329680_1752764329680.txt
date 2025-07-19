@@ -1,0 +1,40 @@
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+🏠 Using LOCAL SQLite database - No external connections
+✅ Local SQLite database found with existing data
+📊 Database ready with 7 users
+✅ SQLite database schema already initialized, skipping migrations
+5:54:30 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Found 0 users with expiring residences
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+5:54:55 PM [express] GET /api/auth/me 401 in 6ms :: {"message":"Not authenticated"}
+5:54:55 PM [express] GET /api/projects 401 in 2ms :: {"message":"Not authenticated"}
+5:54:55 PM [express] GET /api/users 304 in 5ms :: [{"id":1,"username":"admin","password":"admin123",…
+5:54:55 PM [express] GET /api/attendance/daily 304 in 8ms :: [{"id":1,"userId":3,"date":"2025-07-17"…
+5:54:57 PM [express] GET /api/auth/me 401 in 1ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+5:55:00 PM [express] POST /api/auth/login 200 in 5ms :: {"user":{"id":1,"username":"admin","fullName…
+5:55:00 PM [express] GET /api/users 304 in 2ms :: [{"id":1,"username":"admin","password":"admin123",…
+5:55:00 PM [express] GET /api/users/1/notifications 304 in 3ms :: []
+5:55:00 PM [express] GET /api/projects 200 in 3ms :: [{"id":1,"title":"مبنى المكاتب المحلي","descrip…
+5:55:00 PM [express] GET /api/attendance/daily 304 in 6ms :: [{"id":1,"userId":3,"date":"2025-07-17"…
+Manager System Administrator accessing 5 leave requests
+5:55:00 PM [express] GET /api/leave-requests 304 in 8ms :: [{"id":5,"userId":3,"startDate":"2025-08-…
+5:57:27 PM [express] GET /api/auth/me 200 in 3ms :: {"id":1,"username":"admin","fullName":"System Ad…
+5:57:27 PM [express] GET /api/projects 200 in 3ms :: [{"id":1,"title":"مبنى المكاتب المحلي","descrip…
+5:57:27 PM [express] GET /api/users 304 in 1ms :: [{"id":1,"username":"admin","password":"admin123",…
+5:57:27 PM [express] GET /api/attendance/daily 304 in 6ms :: [{"id":1,"userId":3,"date":"2025-07-17"…
+5:57:27 PM [express] GET /api/users/1/notifications 304 in 7ms :: []
+Manager System Administrator accessing 5 leave requests
+5:57:27 PM [express] GET /api/leave-requests 304 in 5ms :: [{"id":5,"userId":3,"startDate":"2025-08-…
+5:57:28 PM [express] GET /api/project-phases 200 in 12ms
+
+

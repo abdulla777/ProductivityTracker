@@ -1,0 +1,79 @@
+Subject: ⚠️ Critical Issues Persist: Project, Client, and Leave Request Functionalities Still Failing
+
+Dear Team,
+
+Thank you for your continuous efforts to resolve the critical issues. After performing detailed tests, the following critical functionalities still fail despite your recent updates:
+
+Functionality	Status	Notes / Error Message
+✅ Add Employee	✅ Working	Successfully tested
+✅ Add Task	✅ Working	Successfully tested
+✅ Attendance Recording	✅ Working	Successfully tested
+❌ Add Project	❌ Not working	Generic frontend error, no logs appeared in the backend
+❌ Add Client	❌ Not working	Generic frontend error, no logs appeared in the backend
+❌ Add Leave Request	❌ Not working	Frontend error: Invalid request method /api/leave-requests
+
+🔍 Immediate Actions Required:
+Backend (Node.js/Express):
+Verify that the backend correctly receives API requests (POST) from frontend forms.
+
+Double-check API route definitions (server/routes.ts) specifically:
+
+/api/projects endpoint
+
+/api/clients endpoint
+
+/api/leave-requests endpoint (Critical: Fix HTTP method issue)
+
+Frontend (React):
+Provide clear and explicit error messages instead of generic ones.
+
+Ensure that the frontend correctly sends valid requests with the correct HTTP method (POST) and payload format.
+
+Database (PostgreSQL):
+Re-verify that all fields in projects, clients, and leave_requests tables allow null values.
+
+sql
+Copy
+Edit
+ALTER TABLE projects ALTER COLUMN start_date DROP NOT NULL;
+ALTER TABLE projects ALTER COLUMN target_end_date DROP NOT NULL;
+ALTER TABLE clients ALTER COLUMN created_at DROP NOT NULL;
+ALTER TABLE leave_requests ALTER COLUMN reason DROP NOT NULL;
+🛡️ Database Protection & Future Stability (Mandatory):
+Due to the critical role this database plays for our company’s daily operations, please ensure to:
+
+Implement regular daily backups (automated via cron jobs).
+
+Use migration tools (drizzle-kit) for safe future schema changes.
+
+Document all schema and backend changes clearly and comprehensively.
+
+📝 Required Confirmation in Next Response:
+Please confirm clearly in your next update:
+
+ Project, client, and leave request functionalities fully tested and working.
+
+ API method definitions explicitly corrected.
+
+ Database schema re-verified and updated to allow nullable fields.
+
+ Comprehensive and clear frontend error handling added.
+
+ Daily backup strategy and migration tools confirmed/documented.
+
+🚨 Immediate Attention Needed:
+Please prioritize this with urgency and provide an update within the next hour, clearly confirming successful tests and adjustments.
+
+Thank you for your prompt cooperation.
+
+Best regards,
+Abdullah
+Technical Lead, ProductivityTracker Project
+
+
+
+
+
+
+
+Ask ChatGPT

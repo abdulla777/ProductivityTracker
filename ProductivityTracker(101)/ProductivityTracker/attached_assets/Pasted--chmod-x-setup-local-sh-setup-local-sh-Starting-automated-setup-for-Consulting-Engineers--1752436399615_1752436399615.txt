@@ -1,0 +1,372 @@
+$ chmod +x setup-local.sh && ./setup-local.sh
+🚀 Starting automated setup for Consulting Engineers Management System
+================================================
+ℹ Updating package lists...
+[sudo] password for usr: 
+18 packages can be upgraded. Run 'apt list --upgradable' to see them.
+✓ Node.js v22.17.0 is already installed
+✓ npm 10.9.2 is available
+✓ PostgreSQL is already installed
+ℹ Starting PostgreSQL service...
+Synchronizing state of postgresql.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable postgresql
+✓ PostgreSQL service is running
+ℹ Configuring PostgreSQL database...
+Password for user postgres: 
+ALTER ROLE
+Password for user postgres: 
+✓ PostgreSQL setup completed
+ℹ Creating .env file...
+ℹ Backed up existing .env file to .env.backup
+✓ .env file created successfully
+ℹ Verifying .env file content...
+✓ .env file contains correct DATABASE_URL
+ℹ Installing project dependencies...
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+
+added 512 packages, and audited 513 packages in 15s
+
+69 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (1 low, 7 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✓ Dependencies installed successfully
+ℹ Setting up database schema...
+ℹ Testing database connection...
+✓ Database connection successful
+ℹ Pushing database schema...
+
+> rest-express@1.0.0 db:push
+> drizzle-kit push
+
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/drizzle.config.ts'
+Using 'pg' driver for database querying
+[✓] Pulling schema from database...
+⚠ Database push failed or timed out, continuing with manual setup...
+ℹ Setting up admin user...
+NOTICE:  relation "users" already exists, skipping
+CREATE TABLE
+INSERT 0 0
+ username |  full_name  |       email       | role  
+----------+-------------+-------------------+-------
+ admin    | مدير النظام | admin@company.com | admin
+(1 row)
+
+✓ Admin user setup completed
+ℹ Login credentials: username=admin, password=admin123
+ℹ Installing additional development tools...
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+curl is already the newest version (8.5.0-2ubuntu10.6).
+wget is already the newest version (1.21.4-1ubuntu4.1).
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+build-essential is already the newest version (12.10ubuntu1).
+The following packages were automatically installed and are no longer required:
+  gyp handlebars javascript-common libjs-async libjs-events libjs-inherits
+  libjs-is-typedarray libjs-prettify libjs-regenerate libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libre2-10 libssl-dev libuv1-dev
+  node-abbrev node-ampproject-remapping node-ansi-escapes node-ansi-regex
+  node-ansi-styles node-aproba node-are-we-there-yet node-argparse node-arrify
+  node-async node-async-each node-auto-bind
+  node-babel-plugin-add-module-exports node-babel7-runtime node-balanced-match
+  node-base64-js node-binary-extensions node-brace-expansion node-busboy
+  node-camelcase node-caniuse-lite node-chownr node-chrome-trace-event
+  node-ci-info node-cjs-module-lexer node-cli-boxes node-cli-cursor node-clone
+  node-clone-deep node-collection-visit node-color-convert node-color-name
+  node-colors node-commander node-commondir node-concat-stream
+  node-console-control-strings node-convert-source-map node-core-js
+  node-core-js-pure node-core-util-is node-data-uri-to-buffer
+  node-decompress-response node-deep-is node-defaults node-define-property
+  node-delegates node-depd node-diff node-electron-to-chromium node-encoding
+  node-end-of-stream node-err-code node-error-ex node-es-module-lexer
+  node-escape-string-regexp node-eslint-utils node-eslint-visitor-keys
+  node-esquery node-estraverse node-esutils node-events node-fancy-log
+  node-fast-deep-equal node-fast-levenshtein node-fetch node-find-up
+  node-flatted node-for-in node-for-own node-foreground-child
+  node-fs-readdir-recursive node-fs-write-stream-atomic node-fs.realpath
+  node-function-bind node-functional-red-black-tree node-get-caller-file
+  node-get-stream node-get-value node-glob node-globals node-got
+  node-graceful-fs node-growl node-has-flag node-has-unicode node-has-value
+  node-has-values node-hosted-git-info node-iconv-lite node-ieee754 node-iferr
+  node-imurmurhash node-indent-string node-inflight node-inherits node-ini
+  node-interpret node-ip node-ip-regex node-is-arrayish node-is-binary-path
+  node-is-buffer node-is-descriptor node-is-extendable node-is-extglob
+  node-is-path-cwd node-is-plain-obj node-is-plain-object node-is-stream
+  node-is-typedarray node-is-windows node-isarray node-isexe node-isobject
+  node-js-tokens node-jsesc node-json-buffer node-json-parse-better-errors
+  node-json-schema node-json-schema-traverse node-json-stable-stringify
+  node-jsonify node-jsonparse node-kind-of node-levn node-loader-runner
+  node-locate-path node-lodash-packages node-log-driver node-lowercase-keys
+  node-lru-cache node-map-visit node-memfs node-merge-stream
+  node-mimic-response node-minimatch node-minimist node-minipass
+  node-mixin-deep node-mute-stream node-n3 node-negotiator node-neo-async
+  node-npm-run-path node-object-inspect node-object-visit node-once
+  node-optimist node-optionator node-osenv node-p-cancelable node-p-limit
+  node-p-locate node-p-map node-pascalcase node-path-dirname node-path-exists
+  node-path-is-absolute node-path-is-inside node-path-type node-pify
+  node-pkg-dir node-postcss-value-parser node-prelude-ls
+  node-process-nextick-args node-promise-inflight node-promise-retry
+  node-promzard node-prr node-pump node-punycode node-quick-lru
+  node-randombytes node-read node-readable-stream node-rechoir node-regenerate
+  node-regenerate-unicode-properties node-regenerator-runtime
+  node-regenerator-transform node-regexpp node-regjsgen node-repeat-string
+  node-require-directory node-require-from-string node-resolve
+  node-resolve-cwd node-resolve-from node-restore-cursor node-resumer
+  node-retry node-run-queue node-safe-buffer node-sellside-emitter
+  node-serialize-javascript node-set-blocking node-set-immediate-shim
+  node-shebang-command node-shebang-regex node-shell-quote node-signal-exit
+  node-slash node-slice-ansi node-source-list-map node-source-map
+  node-source-map-support node-spdx-correct node-spdx-exceptions
+  node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-ssri
+  node-stack-utils node-string-decoder node-strip-bom node-strip-json-comments
+  node-supports-color node-tapable node-terser node-text-table node-through
+  node-time-stamp node-to-fast-properties node-tslib node-type-check
+  node-typedarray node-typedarray-to-buffer node-undici
+  node-unicode-canonical-property-names-ecmascript
+  node-unicode-match-property-value-ecmascript
+  node-unicode-property-aliases-ecmascript node-unique-filename
+  node-unset-value node-uri-js node-util-deprecate node-uuid node-v8flags
+  node-validate-npm-package-license node-wcwidth.js node-webpack-sources
+  node-wordwrap node-wrappy node-write-file-atomic node-xtend node-y18n
+  node-yallist node-yaml
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 18 not upgraded.
+ℹ Verifying setup...
+✓ Node.js v22.17.0 and npm 10.9.2 are ready
+✓ PostgreSQL database connection verified
+✓ package.json found, project is ready
+
+🎉 Setup completed successfully!
+================================================
+Your Consulting Engineers Management System is ready!
+
+📋 Setup Summary:
+   ✓ Node.js v22.17.0 installed
+   ✓ npm 10.9.2 installed
+   ✓ PostgreSQL installed and running
+   ✓ Database 'consulting_engineers' created
+   ✓ Admin user created (admin/admin123)
+   ✓ Environment variables configured
+   ✓ Dependencies installed
+
+🚀 To start the application:
+   npm run dev
+
+🔑 Login Credentials:
+   Username: admin
+   Password: admin123
+
+🌐 Application URLs:
+   Main App: http://localhost:5000
+   Login: http://localhost:5000/login
+
+📄 Configuration Files Created:
+   ✓ .env (database and app configuration)
+
+ℹ Performing final environment check...
+✓ DATABASE_URL is properly set: postgresql://postgres:password@localhost:5432/consulting_engineers
+ℹ Final database connection test...
+✓ Final database connection test passed
+Would you like to start the application now? (y/n):
+y
+Starting application...
+Note: The application will start with the DATABASE_URL from .env file
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+🔄 Running database migrations...
+✅ Database schema is up to date
+✅ Attendance table verification passed - all required columns present
+10:51:14 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:51:53 PM [express] GET /api/auth/me 401 in 4ms :: {"message":"Not authenticated"}
+10:51:54 PM [express] GET /api/projects 304 in 35ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+10:51:54 PM [express] GET /api/users 304 in 5ms :: [{"id":1,"username":"admin","password":"admin123",…
+10:51:54 PM [express] GET /api/attendance/daily 304 in 5ms :: []
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+10:51:57 PM [express] POST /api/auth/login 200 in 6ms :: {"user":{"id":1,"username":"admin","fullName…
+10:51:58 PM [express] GET /api/users/1/notifications 304 in 5ms :: []
+Manager مدير النظام accessing 0 leave requests
+10:51:58 PM [express] GET /api/leave-requests 304 in 8ms :: []
+10:51:58 PM [express] GET /api/project-phases 200 in 13ms
+10:52:02 PM [express] GET /api/attendance/today 304 in 6ms :: []
+10:52:02 PM [express] GET /api/attendance 200 in 10ms
+10:52:10 PM [express] GET /api/project-phases 200 in 9ms
+10:52:15 PM [express] GET /api/attendance 200 in 9ms
+Storing attendance with times: { clockInTime: null, clockOutTime: null, isLate: false }
+Attendance creation error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+Error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+10:52:38 PM [express] POST /api/attendance 500 in 54ms :: {"message":"Internal server error","error":…
+Storing attendance with times: { clockInTime: null, clockOutTime: null, isLate: false }
+Attendance creation error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+Error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+10:52:41 PM [express] POST /api/attendance 500 in 32ms :: {"message":"Internal server error","error":…
+Storing attendance with times: { clockInTime: null, clockOutTime: null, isLate: false }
+Attendance creation error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+Error: error: invalid input syntax for type time: "2025-07-08T07:53:00.000Z"
+    at /home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:468:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(60)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 165,
+  severity: 'ERROR',
+  code: '22007',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $5 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'datetime.c',
+  line: '4026',
+  routine: 'DateTimeParseError'
+}
+10:52:48 PM [express] POST /api/attendance 500 in 34ms :: {"message":"Internal server error","error":…
+

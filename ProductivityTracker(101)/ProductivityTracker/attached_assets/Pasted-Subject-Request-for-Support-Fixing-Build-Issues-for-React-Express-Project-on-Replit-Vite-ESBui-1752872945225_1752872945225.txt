@@ -1,0 +1,84 @@
+Subject: Request for Support – Fixing Build Issues for React + Express Project on Replit (Vite/ESBuild + Date Parsing)
+
+Hi Replit Support Team,
+
+I'm reaching out regarding persistent build/runtime issues with a full-stack project I'm running on Replit (React + Express + SQLite). Below is a full breakdown of the problems, diagnosis, and what I believe could help improve support for similar setups on Replit:
+
+⚠️ Problem #1 – Invalid Time Value Crashes (Frontend)
+Description:
+The React app crashes with:
+
+css
+Copy
+Edit
+Invalid time value
+Root Cause:
+JSX expressions using unsafe date parsing like:
+
+tsx
+Copy
+Edit
+new Date(dateStr).toLocaleDateString()
+or:
+
+tsx
+Copy
+Edit
+safeParseDate() ? .toLocaleDateString() : "—"
+These fail when dateStr is undefined or malformed. Worse, using ? . like that breaks the build entirely with no clear error reference.
+
+Fix:
+I replaced these with safe utility functions like:
+
+ts
+Copy
+Edit
+formatDateSafe(dateStr);
+which internally checks for valid values.
+
+Suggestion:
+Improve Replit’s Vite/ESBuild pipeline to provide more helpful error messages when optional chaining or JSX syntax breaks parsing. The current message only shows:
+
+vbnet
+Copy
+Edit
+✘ [ERROR] Unexpected "."
+...which gives no file or line number.
+
+⚠️ Problem #2 – SQLite File Persistence
+Context:
+The backend uses a local SQLite file (.db) stored in the project root.
+
+Ask:
+Can Replit reliably support this? Or should we store SQLite files in a specific directory (like /mnt/persistent) to ensure persistence across runs?
+
+⚠️ Problem #3 – Startup Compatibility
+Setup:
+
+React frontend (Vite)
+
+Express backend (Node)
+
+SQLite DB
+
+Using concurrently in the package.json:
+
+json
+Copy
+Edit
+"scripts": {
+  "start": "concurrently \"node server.js\" \"npm run start-frontend\""
+}
+Ask:
+Is this multi-process start method fully supported in Replit's runtime shell? If not, what’s the recommended structure?
+
+✅ What I Need
+Clarification on how Replit handles JSX parsing edge cases in Vite.
+
+Guidelines for SQLite usage in local Replit projects.
+
+Confirmation on best practices for starting full-stack apps (frontend + backend) in one process or concurrently.
+
+Thank you for your help and support.
+
+Best regards,

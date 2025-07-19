@@ -1,0 +1,65 @@
+
+After the recent update and based on the latest terminal logs and system testing, here is a detailed summary of the current issues that are still affecting the system:
+
+1. Attendance Errors
+Error Message:
+error: column "clock_in_time" of relation "attendance" does not exist
+
+Explanation:
+The backend is trying to read/write the columns clock_in_time and clock_out_time in the attendance table, but these columns are missing in the database schema.
+
+Impact:
+No attendance records can be added or viewed. All attendance operations fail with a server error (500).
+
+Action Needed:
+Please update the database schema to add these missing columns to the attendance table (or update the code to use the correct columns if they exist under a different name).
+
+2. Attendance Registration Fails for HR Manager
+Details:
+The HR Manager cannot manually register attendance for employees.
+Every POST request to /api/attendance returns a 500 error due to the database column issue above.
+
+Impact:
+This critical HR function is completely blocked for all roles.
+
+3. Residence Expiry Notifications
+Issue:
+When editing an employee’s residence expiry date to less than 3 months from now, no notification/alert is triggered for HR Manager, General Manager, or System Admin.
+
+Expected:
+The system should automatically generate a notification whenever a permit/residence expires in less than 3 months, including after updates.
+
+Action Needed:
+Please review and test the notification logic, especially after editing employee data.
+
+4. Leave Requests
+Current Status:
+Employees can submit leave requests, and HR/General Manager can approve or reject them. Status update notifications are sent.
+
+Outstanding Issues:
+
+After a leave request is approved/rejected, it cannot be edited. Please clarify if this is intended, or enable editing/cancellation if possible.
+
+Sometimes leave requests disappear from the employee’s dashboard or do not show up in the “Show All” page for HR Manager.
+
+Expected:
+All leave requests (past and present) should be visible to both employees and HR with status, and status changes should trigger notifications.
+
+5. Backup & Restore UI
+Current Status:
+Backup and Restore works from the System Management page.
+
+Issue:
+There is an additional Backup/Restore option in Settings > System Settings which is not connected or functional.
+
+Action Needed:
+Please either enable this feature here or remove the extra button to avoid confusion.
+
+6. Other Issues
+401 Not Authenticated:
+Occasional "Not authenticated" errors appear after logout or session expiry. This likely just needs a better session check and redirect to login.
+
+Please review and address these points to ensure the system is fully stable and production-ready. If you need specific screenshots, database schema info, or more technical details for any point, let me know and I will provide them immediately.
+
+Thank you for your support!
+

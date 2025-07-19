@@ -1,0 +1,92 @@
+1. Manual Attendance Registration Not Working
+Error:
+Every attempt to manually add an attendance record returns a 500 Internal Server Error:
+
+go
+Copy
+Edit
+error: column "clock_in_time" of relation "attendance" does not exist
+The current backend code expects the columns clock_in_time and clock_out_time to exist in the attendance table.
+
+The database schema does not include these columns (as shown by repeated errors in terminal log and no data displayed in the UI).
+
+Proposed Solution:
+
+Apply a migration script to add the missing columns to the attendance table:
+
+sql
+Copy
+Edit
+ALTER TABLE attendance
+  ADD COLUMN clock_in_time TIME,
+  ADD COLUMN clock_out_time TIME;
+Ensure that all references in the backend code and queries match the column names and data types.
+
+Test manual attendance registration again after migration.
+
+2. Iqama (Residency Permit) Expiry Notifications Not Triggering
+Issue:
+
+When updating an employee's iqama expiry date to less than 3 months from today, no notification is triggered in the HR or General Manager dashboard.
+
+The "Expiring Iqamas within 3 months" section always displays "No expiring permits," even after manual data changes (see screenshot).
+
+Proposed Solution:
+
+Review and debug the notification logic in both the backend and frontend.
+
+Confirm that the background job/service for checking expiring iqamas is running on every update, not just on server start.
+
+Ensure that updating the expiry date for any user re-triggers the notification logic instantly.
+
+Test with multiple users and various expiry dates (<30 days, <90 days).
+
+Add logging to verify the notification function is executed and is correctly writing to the notifications table and/or sending real-time updates to the UI.
+
+3. Backup & Restore System Issues
+Issue:
+
+The Backup function works (file download triggers), but the Restore function in the Settings/System Management page does not work as expected (no feedback, database not restored).
+
+There are multiple (potentially duplicate) backup/restore options in the UI; at least one does not function at all.
+
+Proposed Solution:
+
+Unify backup and restore interfaces. Keep a single backup/restore control panel, and hide or remove duplicate or non-working options.
+
+Fully implement the Restore handler to process the uploaded file, replace current DB state, and provide user feedback (success/error).
+
+Test the entire backup/restore flow on fresh and existing data, with user sessions in progress.
+
+4. Other Observations & Recommendations
+Database Schema Consistency:
+
+Confirm that all migrations (for columns such as assigned_date in project_staff and the entire staff_evaluations table) are applied and match code expectations.
+
+Error Handling & UX:
+
+Improve UI feedback for failed actions (currently many silent errors or just generic "Internal Server Error" messages).
+
+Display meaningful error messages to end users and instructions to contact admin/dev support if errors persist.
+
+Summary Table
+Area	Issue/Behavior	Solution
+Attendance	500 error, missing columns	Add clock_in_time, clock_out_time columns
+Iqama Alerts	Notifications not updating/triggering	Fix notification logic, trigger on update
+Backup/Restore	Restore not working, UI confusing	Unify & fix handlers, add user feedback
+Schema	Missing/incorrect migrations	Apply DB migrations, check all tables/columns
+UX	Poor error handling	Show clear errors, logging, guidance
+
+Next Steps
+Apply required DB migrations (attendance, project_staff, staff_evaluations, etc).
+
+Fix and test attendance registration and notification logic.
+
+Unify and repair backup/restore interface and handlers.
+
+Add error messages and user guidance in the UI.
+
+Verify all major user stories for HR/Admin, and retest full workflow.
+
+If you need sample SQL migration scripts or backend code snippets for any of the above, let me know and I’ll provide them.
+

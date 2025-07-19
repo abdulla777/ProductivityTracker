@@ -1,0 +1,81 @@
+Current State & Issues: Project Management System (ProductivityTracker)
+Background
+The application is intended as a local-only project and HR management system. The system must work fully offline using a local database (no cloud, no external dependencies).
+All attempts to stabilize and repair the current system have failed to deliver a reliable or usable local product.
+
+What Works Now?
+Project creation and deletion: This is the only feature currently working (partially).
+
+Local SQLite database: The application runs with a local .db file and no internet connection (this is a requirement).
+
+Critical Issues (Blocking Bugs)
+Cannot add new clients (companies/organizations).
+
+Cannot add new staff (employees).
+
+Cannot disable or delete staff users.
+
+Attendance logging is completely broken; all attendance-related buttons are non-functional and there are multiple redundant icons (should be merged to one).
+
+Cannot add tasks to any project.
+
+Cannot add business opportunities (opportunities module is broken).
+
+Cannot submit or manage leave requests (employee leave).
+
+Database schema problems: Missing fields/columns (notes, phase_id, client_notes.project_id, etc.) and unsupported functions like now.
+
+Repeated SQLITE errors: The migration from PostgreSQL to SQLite was incomplete and caused further breakage.
+
+The system was working better in older releases (before recent database/script changes).
+
+What the New Team Must Do
+Deliver a local/offline system (no cloud, no external database required).
+
+All core CRUD operations must work for:
+
+Projects
+
+Employees
+
+Clients
+
+Attendance (check-in/check-out, daily logs)
+
+Tasks
+
+Leaves (requests, approvals)
+
+Business Opportunities
+
+Database schema must match the actual application needs (all required fields/columns must exist).
+
+All main features must be accessible and functional from the UI.
+
+Attendance should be logged and reflected in the dashboard with a single, clear button.
+
+If needed, rebuild the system from scratch (with PostgreSQL or SQLite, as long as it works 100% offline).
+
+Technical Note
+The current codebase is inconsistent—backend is full of legacy PostgreSQL code, while the database is now SQLite (causing many SQL and runtime errors).
+
+Multiple critical bugs, schema mismatches, and unhandled exceptions.
+
+The code is currently unfit for production or even limited local use.
+
+Attachments
+Full log files, screenshots, and step-by-step reproduction available for all bugs and UI flows.
+
+Summary
+The project is not usable in its current state.
+A reliable, fully local solution is required—even if it means starting over.
+I’m available for technical clarifications or more logs/screenshots if needed.
+
+Let me know if you want to include anything specific 
+
+
+
+
+
+
+

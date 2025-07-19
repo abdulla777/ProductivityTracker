@@ -1,0 +1,79 @@
+Subject: Critical Issues Remaining in Localhost Environment – Request for Fixes
+
+Dear Replit Team,
+
+First, thank you for your efforts in building and improving the system — we truly appreciate the progress made so far. However, we’re still running on the local development environment (localhost) for testing purposes before full deployment, and there are several critical issues that need urgent attention:
+
+✅ Pending Issues:
+Company Logo Display Bug:
+
+The logo is still broken in the top header of the dashboard (see attached image).
+
+Kindly remove the logo from the header completely and retain it only in the sidebar, as it's causing layout overlap issues in RTL (Arabic) mode.
+
+Task Creation Fails:
+
+When trying to create a task, we get the error:
+Window.fetch: Invalid request method /api/tasks.
+
+Even though project and assignee are selected, the request fails.
+
+Please ensure the request method is set to POST and the backend route is properly configured.
+
+Attendance Registration Fails:
+
+Attempting to register attendance results in a red error message ("An error occurred while registering attendance").
+
+Kindly check the required fields (userId, checkIn, checkOut, recordedBy, date, etc.) and validate both API and schema.
+
+Opportunity Creation Fails:
+
+Creating a new opportunity returns the error:
+Error creating opportunity. Please try again.
+
+Please verify that the enums (type, status, strength) are being handled correctly from the form submission.
+
+Leave Request System:
+
+Submitted leave requests do not appear in the system.
+
+Leave types are shown as raw values like:
+employeeServices.leave.types.annual
+instead of readable labels like “Annual Leave”.
+
+The leave request does not notify or route to the Project Manager or HR Manager for approval.
+
+We request the leave approval process be updated so it:
+
+Routes the request to both Project Manager and HR Manager.
+
+Requires approval from both parties before the leave is confirmed.
+
+User Roles (Job Types):
+
+Kindly confirm and implement the following job roles:
+
+System Admin
+
+Project Manager
+
+Engineer
+
+Admin Staff
+
+✅ HR Manager → Can approve/reject leaves.
+
+✅ General Manager → Can view all records (except those belonging to System Admin).
+
+Reports Not Printable:
+
+The reports section currently lacks print/export functionality.
+
+Please add an option to Print or Export to PDF/Excel.
+
+📎 Attachments:
+We’ve included screenshots of every issue listed above to help you quickly identify and resolve them.
+
+We appreciate your support and collaboration, and we hope to finalize all these issues soon so the system can move into production within our company.
+
+Best regards,

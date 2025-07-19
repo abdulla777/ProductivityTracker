@@ -1,0 +1,64 @@
+Hello Replit team,
+
+Thank you for your continued effort on improving the platform.
+
+We are now aiming to expand the system’s capabilities to include **Business Development and Opportunity Management**, in addition to the existing project and HR functionalities.
+
+Please find below the requested new modules and features:
+
+-----------------------------------
+🔹 1. Opportunity & Client Management Module
+-----------------------------------
+
+1. A unified form for new potential clients:
+   - Fields: Name, Phone, Email, Organization, Notes, etc.
+
+2. Ability to attach related reports (e.g., meeting minutes) per client when a lead progresses to a valuable opportunity.
+
+3. A digital log of all opportunities:
+   - Fields: Status, Type, Organization, Dates, Strength (Strong – Medium – Weak), Notes.
+
+4. Opportunity classification by type:
+   - New Project, Partnership, Vendor Registration, Ongoing Project, Project Expansion.
+
+-----------------------------------
+🔹 2. Existing Opportunities Management
+-----------------------------------
+
+1. Periodic follow-up and updating client records with new developments, especially those that started from past projects.
+
+2. Projects under this category should be cross-linked with the Projects section to track progress and documentation (contracts, reports, payments).
+
+3. Also link these projects to the Business Development module for clear visibility of origin and evolution.
+
+-----------------------------------
+🔹 3. Event Management Module
+-----------------------------------
+
+1. Calendar with preloaded upcoming events, including time, location.
+
+2. Ability to upload invitations, QR codes, and list of attendees.
+
+3. Auto-reminders before events.
+
+-----------------------------------
+🔹 4. Proposal Tracking System
+-----------------------------------
+
+1. Each proposal should include:
+   - Client Name, Work Scope, Proposed Price, Submission Date.
+
+2. Proposal status:
+   - Submitted, Under Review, Negotiation, Accepted, Rejected (with optional reason field).
+
+3. File upload field for both technical and financial proposals.
+
+4. Automatic reminders for proposal submission deadlines.
+
+-----------------------------------
+
+All these modules should support dual-language (Arabic/English) and follow the existing UI/UX design pattern of the application.
+
+Let us know if you need mockups or field structures for implementation. We’re happy to support in ensuring proper alignment.
+
+Thank you!

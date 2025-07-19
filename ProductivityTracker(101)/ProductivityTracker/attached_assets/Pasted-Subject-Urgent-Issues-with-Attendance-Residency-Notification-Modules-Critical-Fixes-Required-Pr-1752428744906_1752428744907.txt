@@ -1,0 +1,145 @@
+Subject: Urgent Issues with Attendance & Residency Notification Modules – Critical Fixes Required
+Project Context
+We are working on an HR & Productivity Management System (Express/React/PostgreSQL) developed and hosted via Replit. Despite several update rounds, some core modules remain non-functional, which blocks production usage.
+
+Current Critical Issues
+1. Manual Attendance Logging Fails
+Symptoms:
+
+Attempting to log attendance for any user (via the “Manual Attendance” page) results in an error:
+error: column "clock_in_time" of relation "attendance" does not exist
+
+HTTP 500 errors in the backend and no records are saved.
+
+Root Cause:
+
+The backend expects clock_in_time (and likely clock_out_time) columns in the attendance table, but these columns do not exist in the database schema.
+
+Evidence:
+
+Repeated error in Express log:
+
+bash
+Copy
+Edit
+error: column "clock_in_time" of relation "attendance" does not exist
+at .../pg-pool/index.js:45:11
+...
+Screenshots of the UI show failed attendance attempts and error modals.
+
+2. Residency Expiry Notifications Not Working
+Symptoms:
+
+Editing/adding a user with less than 3 months remaining on their residency does not trigger any notification to HR or General Manager.
+
+Residency Management UI always displays “No residencies expiring soon” regardless of test data.
+
+Root Cause:
+
+Either the backend notification logic is not running on record update, or the date calculation/query for expiring residencies is incorrect.
+
+Evidence:
+
+Log: Residence notification check completed. Sent 0 notifications. after adding/editing relevant users.
+
+No notification in the UI, and the list is empty.
+
+3. Backup & Restore Functionality Not Consistent
+Symptoms:
+
+Backup from System Management does download a file.
+
+Restore option from Settings page does not work as intended (no effect or unclear behavior).
+
+Root Cause:
+
+Likely missing API integration or incorrect mapping of uploaded data to restore logic.
+
+4. Leave Request/Approval Workflow
+Symptoms:
+
+Workflow (request/approve/notification) mostly works.
+
+However, post-approval, requests cannot be edited/updated (sometimes by design, but users want the ability to modify status/notes).
+
+History of leave requests not always shown to users after approval/denial.
+
+Root Cause:
+
+Incomplete implementation of leave request editing rules and/or history logging.
+
+5. Other Observations
+Project Staff Assignment:
+
+Errors with column “assigned_date” missing in project_staff table.
+
+Staff Evaluation Module:
+
+staff_evaluations relation does not exist (seen in logs).
+
+Suggested Solutions
+1. Immediate Database Migration
+Solution:
+
+Alter the attendance table to include missing columns:
+
+sql
+Copy
+Edit
+ALTER TABLE attendance ADD COLUMN clock_in_time TIME;
+ALTER TABLE attendance ADD COLUMN clock_out_time TIME;
+Review all queries using these columns and test logging manually.
+
+2. Residency Notifications – Event Trigger
+Solution:
+
+Ensure notification logic is triggered on every insert/update of the user’s residency expiry date, not just on a daily cron job.
+
+Double-check date difference logic for “< 3 months” and test with real data.
+
+3. Backup/Restore
+Solution:
+
+Unify backup/restore logic so that files exported can be re-imported directly from any admin panel.
+
+Provide clear user feedback on restore success/failure.
+
+4. Leave Requests
+Solution:
+
+Allow leave requests to be updated post-approval/denial (by HR/GM only).
+
+Display history of all requests for each user, not just pending ones.
+
+Ensure notifications are sent for all status changes.
+
+5. Schema/DB Consistency
+Solution:
+
+Run a full schema check:
+
+attendance.clock_in_time
+
+attendance.clock_out_time
+
+project_staff.assigned_date (or update code to use the existing assigned_at)
+
+Create staff_evaluations table as needed.
+
+6. Testing and Documentation
+Solution:
+
+Add integration tests for all critical flows (attendance, leave, notifications).
+
+Document exact database schema expected by the codebase.
+
+Attachments & Evidence
+[Attached latest project ZIP from Replit]
+
+[Screenshots showing attendance error and residency bug]
+
+[Full terminal logs with error stack traces]
+
+Request
+Kindly prioritize resolving these database and workflow issues, as the system is currently not usable in production. If you need sample data, schema exports, or step-by-step reproduction videos, let us know!
+

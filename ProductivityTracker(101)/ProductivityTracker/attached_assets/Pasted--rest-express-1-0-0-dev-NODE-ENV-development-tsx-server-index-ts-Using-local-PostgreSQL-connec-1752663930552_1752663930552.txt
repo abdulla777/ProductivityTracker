@@ -1,0 +1,164 @@
+ rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+🔄 Running database migrations...
+✅ Database schema is up to date
+✅ Attendance table verification passed - all required columns present
+2:00:42 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Found 0 users with expiring residences
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+2:01:18 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+2:01:18 PM [express] GET /api/projects 401 in 1ms :: {"message":"Not authenticated"}
+2:01:18 PM [express] GET /api/users 304 in 42ms :: [{"id":1,"username":"admin","password":"admin123"…
+2:01:20 PM [express] GET /api/auth/me 401 in 0ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+2:01:23 PM [express] POST /api/auth/login 200 in 7ms :: {"user":{"id":1,"username":"admin","fullName…
+2:01:23 PM [express] GET /api/users 304 in 5ms :: [{"id":1,"username":"admin","password":"admin123",…
+2:01:23 PM [express] GET /api/users/1/notifications 304 in 13ms :: [{"id":52,"userId":1,"title":"تنب…
+2:01:23 PM [express] GET /api/projects 200 in 27ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+Manager مدير النظام accessing 1 leave requests
+2:01:23 PM [express] GET /api/leave-requests 304 in 24ms :: [{"id":1,"userId":1,"type":"sick","start…
+2:01:23 PM [express] GET /api/attendance/daily 304 in 61ms :: [{"id":10,"userId":11,"date":"2025-07-…
+2:01:24 PM [express] GET /api/project-phases 200 in 12ms
+2:01:26 PM [express] GET /api/clients 304 in 4ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contact…
+2:01:31 PM [express] GET /api/projects/3 304 in 4ms :: {"id":3,"title":"فيلا عائلية فاخرة","descript…
+Error: error: column "description" does not exist
+    at /home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getPhasesByProject (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/storage.ts:299:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:316:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '37',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+2:01:31 PM [express] GET /api/projects/3/phases 500 in 18ms :: {"message":"Internal server error","e…
+Error: error: column "phase_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectFiles (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/storage.ts:371:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:388:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 108,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '28',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+2:01:31 PM [express] GET /api/projects/3/files 500 in 9ms :: {"message":"Internal server error","err…
+2:01:31 PM [express] GET /api/projects/3/staff 304 in 21ms :: [{"id":2,"projectId":3,"userId":2,"ass…
+2:01:31 PM [express] GET /api/clients/3 304 in 4ms :: {"id":3,"name":"مؤسسة التطوير العقاري","contac…
+Error deleting project: error: relation "client_notes" does not exist
+    at /home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async DatabaseStorage.deleteProject (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/storage.ts:234:7)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:300:23)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '13',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+2:01:34 PM [express] DELETE /api/projects/3 404 in 17ms :: {"message":"Project not found"}
+Error: error: column "phase_id" of relation "project_files" does not exist
+    at /home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.addProjectFile (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/storage.ts:363:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:401:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+2:04:08 PM [express] POST /api/project-files 500 in 39ms :: {"message":"Internal server error","erro…
+Error deleting project: error: relation "client_notes" does not exist
+    at /home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async DatabaseStorage.deleteProject (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/storage.ts:234:7)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:300:23)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(76)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '13',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+2:04:28 PM [express] DELETE /api/projects/3 404 in 42ms :: {"message":"Project not found"}
+
+

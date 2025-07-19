@@ -1,0 +1,32 @@
+{
+  "name": "consulting-engineers-local",
+  "version": "1.0.0",
+  "description": "Consulting Engineers Management System - Local Development",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev:local": "LOCAL_DEVELOPMENT=true NODE_ENV=development tsx server/index.ts",
+    "server": "LOCAL_DEVELOPMENT=true NODE_ENV=development tsx server/index.ts",
+    "client": "vite --config vite.config.local.ts",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "vite build --config vite.config.local.ts",
+    "build:server": "esbuild server/index.ts --bundle --platform=node --target=node18 --outfile=dist/server.js --external:pg --external:@neondatabase/serverless",
+    "start": "node dist/server.js",
+    "setup": "chmod +x setup-local-complete.sh && ./setup-local-complete.sh",
+    "db:init": "PGPASSWORD=password psql -h localhost -U postgres -d consulting_engineers -f init-local-db.sql"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "pg": "^8.11.3",
+    "drizzle-orm": "^0.29.0",
+    "tsx": "^4.7.0",
+    "concurrently": "^8.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.17.10",
+    "@types/pg": "^8.10.9",
+    "vite": "^5.1.0"
+  }
+}

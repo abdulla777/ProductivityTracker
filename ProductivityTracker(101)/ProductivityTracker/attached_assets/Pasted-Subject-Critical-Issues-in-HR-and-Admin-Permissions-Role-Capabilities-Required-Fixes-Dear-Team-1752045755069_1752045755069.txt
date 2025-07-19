@@ -1,0 +1,66 @@
+Subject: Critical Issues in HR and Admin Permissions – Role Capabilities & Required Fixes
+
+Dear Team,
+
+After testing the latest release, I have encountered the following critical issues regarding user roles and permissions:
+
+1. HR Manager (hr_manager) cannot access Residency Management
+Expected:
+HR Manager should be able to access and manage the Residency Management section (إدارة الإقامات).
+
+Actual:
+This section is only visible to System Admin. It is hidden for HR Manager, which prevents proper workflow.
+
+2. Leave Requests Are Not Visible to HR Manager
+Expected:
+When an employee submits a leave request, it should appear in the HR Manager’s notifications or dashboard, for review and approval/rejection.
+
+Actual:
+Leave requests do not appear to the HR Manager, and no notification or alert is triggered.
+
+3. Attendance Issues
+Expected:
+HR Manager should be able to record, edit, and review attendance for all staff, including specifying time and date.
+
+Actual:
+
+Attendance cannot be properly registered by the HR Manager from the dashboard.
+
+The interface lacks controls to set time and date.
+
+The feature is not working as required.
+
+4. Cannot Add Employees (User Accounts)
+Expected:
+Both System Admin and HR Manager should be able to add new employees/users to the system, assigning them roles.
+
+Actual:
+Neither HR Manager nor System Admin can add employees—the Add Employee function is broken or missing.
+
+Summary Table: Roles & What They Should Access
+Role	Should See/Do
+System Admin	Full access: all modules, all data, settings, users, backup, residency.
+HR Manager	Manage users, attendance, leave requests, notifications, residency, HR reports.
+General Manager	See reports, projects, clients, attendance, opportunities.
+Project Manager	See/manage own projects, assign tasks, view team attendance.
+Engineer	See assigned projects, submit attendance, request leave.
+Admin Staff	See own attendance, handle assigned tasks.
+Regular Staff	See own attendance and leave, submit requests.
+
+Required Fixes:
+Grant Residency Management access to HR Manager.
+
+Ensure all leave requests submitted by employees are visible to HR Manager (ideally via notifications or a dashboard).
+
+Fix attendance management UI and backend so HR Manager can fully record and edit staff attendance, including date/time.
+
+Restore/Add the Add Employee function for both System Admin and HR Manager.
+
+Review accessMatrix (RBAC) and permissions logic so every role sees only what they are supposed to, and nothing is missing.
+
+Document in detail what every user role can and cannot access, so future confusion is avoided.
+
+Please treat this as a priority for the production release.
+If you need screenshots or step-by-step test scenarios for each role, I am ready to provide them.
+
+Thank you,

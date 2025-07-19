@@ -1,0 +1,74 @@
+Run `npm audit` for details.
+usr@usr:~/Desktop/ProductivityTracker(90)./ProductivityTracker$ ./start-local-sqlite.sh
+🏠 Starting application with LOCAL SQLite database...
+🏠 بدء التطبيق مع قاعدة بيانات SQLite المحلية...
+✅ Local SQLite database found
+✅ قاعدة بيانات SQLite المحلية موجودة
+📊 Using local database: ./local_productivity_tracker.db
+📊 استخدام قاعدة البيانات المحلية: ./local_productivity_tracker.db
+🚀 Starting application...
+🚀 بدء التطبيق...
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+🏠 Using LOCAL SQLite database - No external connections
+✅ Local SQLite database found with existing data
+📊 Database ready with 4 users
+✅ SQLite database schema already initialized, skipping migrations
+11:28:27 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Found 0 users with expiring residences
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+11:29:05 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+11:29:05 PM [express] GET /api/projects 401 in 1ms :: {"message":"Not authenticated"}
+11:29:05 PM [express] GET /api/users 200 in 6ms :: [{"id":1,"username":"admin","password":"admin123",…
+Error: SqliteError: no such column: "check_in" - should this be a string literal in single-quotes?
+    at Database.prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at BetterSQLiteSession.prepareQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/better-sqlite3/session.ts:50:28)
+    at BetterSQLiteSession.prepareOneTimeQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/session.ts:135:15)
+    at SQLiteSelectBase._prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:865:85)
+    at SQLiteSelectBase.all (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:884:15)
+    at SQLiteSelectBase.execute (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:896:15)
+    at SQLiteSelectBase.then (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/query-promise.ts:31:15) {
+  code: 'SQLITE_ERROR'
+}
+11:29:05 PM [express] GET /api/attendance/daily 500 in 16ms :: {"message":"Internal server error","er…
+11:29:08 PM [express] GET /api/auth/me 401 in 0ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+11:29:12 PM [express] POST /api/auth/login 200 in 4ms :: {"user":{"id":1,"username":"admin","fullName…
+11:29:12 PM [express] GET /api/users/1/notifications 304 in 3ms :: []
+11:29:12 PM [express] GET /api/users 304 in 2ms :: [{"id":1,"username":"admin","password":"admin123",…
+11:29:12 PM [express] GET /api/projects 200 in 4ms :: [{"id":1,"title":"Local Office Building","descr…
+Error: SqliteError: no such column: "check_in" - should this be a string literal in single-quotes?
+    at Database.prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at BetterSQLiteSession.prepareQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/better-sqlite3/session.ts:50:28)
+    at BetterSQLiteSession.prepareOneTimeQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/session.ts:135:15)
+    at SQLiteSelectBase._prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:865:85)
+    at SQLiteSelectBase.all (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:884:15)
+    at SQLiteSelectBase.execute (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:896:15)
+    at SQLiteSelectBase.then (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/query-promise.ts:31:15) {
+  code: 'SQLITE_ERROR'
+}
+11:29:12 PM [express] GET /api/attendance/daily 500 in 3ms :: {"message":"Internal server error","err…
+Error: SqliteError: no such column: "notes" - should this be a string literal in single-quotes?
+    at Database.prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at BetterSQLiteSession.prepareQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/better-sqlite3/session.ts:50:28)
+    at BetterSQLiteSession.prepareOneTimeQuery (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/session.ts:135:15)
+    at SQLiteSelectBase._prepare (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:865:85)
+    at SQLiteSelectBase.all (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:884:15)
+    at SQLiteSelectBase.execute (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/sqlite-core/query-builders/select.ts:896:15)
+    at SQLiteSelectBase.then (/home/usr/Desktop/ProductivityTracker(90)./ProductivityTracker/node_modules/src/query-promise.ts:31:15) {
+  code: 'SQLITE_ERROR'
+}
+11:29:12 PM [express] GET /api/leave-requests 500 in 3ms :: {"message":"Internal server error","error…
+11:29:12 PM [express] GET /api/project-phases 200 in 8ms
+11:29:24 PM [express] GET /api/clients 200 in 3ms :: [{"id":1,"name":"Local Construction Co.","contac…
+
+

@@ -1,0 +1,80 @@
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection - productivity_tracker database
+🔄 Running database migrations...
+Failed to create migrations table: error: password authentication failed for user "postgres"
+    at /home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createMigrationsTable (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:104:5)
+    at async runDatabaseMigrations (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:155:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/index.ts:57:5) {
+  length: 104,
+  severity: 'FATAL',
+  code: '28P01',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'auth.c',
+  line: '323',
+  routine: 'auth_failed'
+}
+❌ Database migration failed: error: password authentication failed for user "postgres"
+    at /home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createMigrationsTable (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:104:5)
+    at async runDatabaseMigrations (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:155:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/index.ts:57:5) {
+  length: 104,
+  severity: 'FATAL',
+  code: '28P01',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'auth.c',
+  line: '323',
+  routine: 'auth_failed'
+}
+❌ Failed to run database migrations: error: password authentication failed for user "postgres"
+    at /home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async createMigrationsTable (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:104:5)
+    at async runDatabaseMigrations (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/database-migrations.ts:155:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(88)./ProductivityTracker/server/index.ts:57:5) {
+  length: 104,
+  severity: 'FATAL',
+  code: '28P01',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'auth.c',
+  line: '323',
+  routine: 'auth_failed'
+}
+Application cannot start without proper database schema
+usr@usr:~/Desktop/ProductivityTracker(88)./ProductivityTracker$ 
+

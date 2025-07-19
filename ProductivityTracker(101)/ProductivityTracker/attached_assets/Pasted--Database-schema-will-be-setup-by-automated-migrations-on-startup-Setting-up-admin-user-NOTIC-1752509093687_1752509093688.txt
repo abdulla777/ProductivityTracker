@@ -1,0 +1,578 @@
+ Database schema will be setup by automated migrations on startup
+ℹ Setting up admin user...
+NOTICE:  relation "users" already exists, skipping
+CREATE TABLE
+INSERT 0 0
+ username |  full_name  |       email       | role  
+----------+-------------+-------------------+-------
+ admin    | مدير النظام | admin@company.com | admin
+(1 row)
+
+✓ Admin user setup completed
+ℹ Login credentials: username=admin, password=admin123
+ℹ Installing additional development tools...
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+curl is already the newest version (8.5.0-2ubuntu10.6).
+wget is already the newest version (1.21.4-1ubuntu4.1).
+git is already the newest version (1:2.43.0-1ubuntu7.3).
+build-essential is already the newest version (12.10ubuntu1).
+The following packages were automatically installed and are no longer required:
+  gyp handlebars javascript-common libjs-async libjs-events libjs-inherits
+  libjs-is-typedarray libjs-prettify libjs-regenerate libjs-source-map
+  libjs-sprintf-js libjs-typedarray-to-buffer libre2-10 libssl-dev libuv1-dev
+  node-abbrev node-ampproject-remapping node-ansi-escapes node-ansi-regex
+  node-ansi-styles node-aproba node-are-we-there-yet node-argparse node-arrify
+  node-async node-async-each node-auto-bind
+  node-babel-plugin-add-module-exports node-babel7-runtime node-balanced-match
+  node-base64-js node-binary-extensions node-brace-expansion node-busboy
+  node-camelcase node-caniuse-lite node-chownr node-chrome-trace-event
+  node-ci-info node-cjs-module-lexer node-cli-boxes node-cli-cursor node-clone
+  node-clone-deep node-collection-visit node-color-convert node-color-name
+  node-colors node-commander node-commondir node-concat-stream
+  node-console-control-strings node-convert-source-map node-core-js
+  node-core-js-pure node-core-util-is node-data-uri-to-buffer
+  node-decompress-response node-deep-is node-defaults node-define-property
+  node-delegates node-depd node-diff node-electron-to-chromium node-encoding
+  node-end-of-stream node-err-code node-error-ex node-es-module-lexer
+  node-escape-string-regexp node-eslint-utils node-eslint-visitor-keys
+  node-esquery node-estraverse node-esutils node-events node-fancy-log
+  node-fast-deep-equal node-fast-levenshtein node-fetch node-find-up
+  node-flatted node-for-in node-for-own node-foreground-child
+  node-fs-readdir-recursive node-fs-write-stream-atomic node-fs.realpath
+  node-function-bind node-functional-red-black-tree node-get-caller-file
+  node-get-stream node-get-value node-glob node-globals node-got
+  node-graceful-fs node-growl node-has-flag node-has-unicode node-has-value
+  node-has-values node-hosted-git-info node-iconv-lite node-ieee754 node-iferr
+  node-imurmurhash node-indent-string node-inflight node-inherits node-ini
+  node-interpret node-ip node-ip-regex node-is-arrayish node-is-binary-path
+  node-is-buffer node-is-descriptor node-is-extendable node-is-extglob
+  node-is-path-cwd node-is-plain-obj node-is-plain-object node-is-stream
+  node-is-typedarray node-is-windows node-isarray node-isexe node-isobject
+  node-js-tokens node-jsesc node-json-buffer node-json-parse-better-errors
+  node-json-schema node-json-schema-traverse node-json-stable-stringify
+  node-jsonify node-jsonparse node-kind-of node-levn node-loader-runner
+  node-locate-path node-lodash-packages node-log-driver node-lowercase-keys
+  node-lru-cache node-map-visit node-memfs node-merge-stream
+  node-mimic-response node-minimatch node-minimist node-minipass
+  node-mixin-deep node-mute-stream node-n3 node-negotiator node-neo-async
+  node-npm-run-path node-object-inspect node-object-visit node-once
+  node-optimist node-optionator node-osenv node-p-cancelable node-p-limit
+  node-p-locate node-p-map node-pascalcase node-path-dirname node-path-exists
+  node-path-is-absolute node-path-is-inside node-path-type node-pify
+  node-pkg-dir node-postcss-value-parser node-prelude-ls
+  node-process-nextick-args node-promise-inflight node-promise-retry
+  node-promzard node-prr node-pump node-punycode node-quick-lru
+  node-randombytes node-read node-readable-stream node-rechoir node-regenerate
+  node-regenerate-unicode-properties node-regenerator-runtime
+  node-regenerator-transform node-regexpp node-regjsgen node-repeat-string
+  node-require-directory node-require-from-string node-resolve
+  node-resolve-cwd node-resolve-from node-restore-cursor node-resumer
+  node-retry node-run-queue node-safe-buffer node-sellside-emitter
+  node-serialize-javascript node-set-blocking node-set-immediate-shim
+  node-shebang-command node-shebang-regex node-shell-quote node-signal-exit
+  node-slash node-slice-ansi node-source-list-map node-source-map
+  node-source-map-support node-spdx-correct node-spdx-exceptions
+  node-spdx-expression-parse node-spdx-license-ids node-sprintf-js node-ssri
+  node-stack-utils node-string-decoder node-strip-bom node-strip-json-comments
+  node-supports-color node-tapable node-terser node-text-table node-through
+  node-time-stamp node-to-fast-properties node-tslib node-type-check
+  node-typedarray node-typedarray-to-buffer node-undici
+  node-unicode-canonical-property-names-ecmascript
+  node-unicode-match-property-value-ecmascript
+  node-unicode-property-aliases-ecmascript node-unique-filename
+  node-unset-value node-uri-js node-util-deprecate node-uuid node-v8flags
+  node-validate-npm-package-license node-wcwidth.js node-webpack-sources
+  node-wordwrap node-wrappy node-write-file-atomic node-xtend node-y18n
+  node-yallist node-yaml
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
+ℹ Verifying setup...
+✓ Node.js v22.17.0 and npm 10.9.2 are ready
+✓ PostgreSQL database connection verified
+✓ package.json found, project is ready
+
+🎉 Setup completed successfully!
+================================================
+Your Consulting Engineers Management System is ready!
+
+📋 Setup Summary:
+   ✓ Node.js v22.17.0 installed
+   ✓ npm 10.9.2 installed
+   ✓ PostgreSQL installed and running
+   ✓ Database 'consulting_engineers' created
+   ✓ Admin user created (admin/admin123)
+   ✓ Environment variables configured
+   ✓ Dependencies installed
+
+🚀 To start the application:
+   npm run dev
+
+🔑 Login Credentials:
+   Username: admin
+   Password: admin123
+
+🌐 Application URLs:
+   Main App: http://localhost:5000
+   Login: http://localhost:5000/login
+
+📄 Configuration Files Created:
+   ✓ .env (database and app configuration)
+
+ℹ Performing final environment check...
+✓ DATABASE_URL is properly set: postgresql://postgres:password@localhost:5432/consulting_engineers
+ℹ Final database connection test...
+✓ Final database connection test passed
+Would you like to start the application now? (y/n):
+y
+Starting application...
+Note: The application will start with the DATABASE_URL from .env file
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+🔄 Running database migrations...
+✅ Database schema is up to date
+✅ Attendance table verification passed - all required columns present
+6:52:13 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Checking test: 65 days until expiry
+Sent 3_months notification for test
+Residence notification check completed. Sent 1 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+6:52:43 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+6:52:43 PM [express] GET /api/projects 304 in 40ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+6:52:43 PM [express] GET /api/users 200 in 38ms :: [{"id":1,"username":"admin","password":"admin123"…
+6:52:43 PM [express] GET /api/clients 304 in 37ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contac…
+6:52:44 PM [express] GET /api/attendance/daily 304 in 53ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+6:52:49 PM [express] POST /api/auth/login 200 in 6ms :: {"user":{"id":1,"username":"admin","fullName…
+6:52:49 PM [express] GET /api/users/1/notifications 200 in 7ms :: [{"id":16,"userId":1,"title":"تنبي…
+6:52:49 PM [express] POST /api/notifications/residence-alert 200 in 10ms
+Manager مدير النظام accessing 1 leave requests
+6:52:49 PM [express] GET /api/leave-requests 200 in 25ms :: [{"id":1,"userId":1,"type":"sick","start…
+6:52:49 PM [express] GET /api/project-phases 200 in 28ms
+6:54:56 PM [express] GET /api/attendance 200 in 13ms
+6:54:56 PM [express] GET /api/attendance/today 200 in 62ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+6:55:01 PM [express] PATCH /api/attendance/3 500 in 15ms :: {"message":"Internal server error","erro…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+6:55:03 PM [express] PATCH /api/attendance/4 500 in 5ms :: {"message":"Internal server error","error…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+6:55:04 PM [express] PATCH /api/attendance/5 500 in 2ms :: {"message":"Internal server error","error…
+6:55:16 PM [express] GET /api/tasks 304 in 36ms :: [{"id":1,"title":"test","description":"gfd","proj…
+6:55:41 PM [express] GET /api/attendance/daily 304 in 38ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+6:55:46 PM [express] GET /api/clients/1/projects 304 in 4ms :: [{"id":1,"title":"برج الريادة السكني"…
+6:55:46 PM [express] GET /api/clients/2/projects 304 in 4ms :: [{"id":2,"title":"مجمع مكاتب الأعمال"…
+6:55:46 PM [express] GET /api/clients/3/projects 304 in 4ms :: [{"id":3,"title":"فيلا عائلية فاخرة",…
+6:55:46 PM [express] GET /api/clients/4/projects 304 in 3ms :: []
+6:56:15 PM [express] POST /api/auth/logout 200 in 2ms :: {"success":true,"message":"Logged out succe…
+6:56:17 PM [express] GET /api/auth/me 401 in 1ms :: {"message":"Not authenticated"}
+Login attempt for username: test
+User found: true
+User logged in successfully, session userId: 11
+6:56:20 PM [express] POST /api/auth/login 200 in 32ms :: {"user":{"id":11,"username":"test","fullNam…
+6:56:20 PM [express] GET /api/users/11/notifications 200 in 16ms :: []
+6:56:20 PM [express] GET /api/clients 304 in 7ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contact…
+6:56:20 PM [express] GET /api/projects 304 in 40ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+6:56:20 PM [express] GET /api/users 304 in 39ms :: [{"id":1,"username":"admin","password":"admin123"…
+6:56:20 PM [express] GET /api/attendance/daily 304 in 47ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+6:56:25 PM [express] GET /api/opportunities 304 in 4ms :: []
+6:56:27 PM [express] GET /api/users/11/attendance 304 in 7ms :: [{"id":5,"userId":11,"date":"2025-07…
+Employee test accessing 0 personal leave requests
+6:56:27 PM [express] GET /api/leave-requests 200 in 7ms :: []
+6:56:27 PM [express] GET /api/users/11/attendance/today 200 in 19ms
+6:56:38 PM [express] GET /api/projects/2 200 in 34ms :: {"id":2,"title":"مجمع مكاتب الأعمال","descri…
+Error: error: column "description" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getPhasesByProject (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:277:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:267:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '37',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:56:38 PM [express] GET /api/projects/2/phases 500 in 43ms :: {"message":"Internal server error","e…
+Error: error: column "assigned_date" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectStaff (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:323:25)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:179:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 185,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "project_staff.assigned_at".',
+  position: '39',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3729',
+  routine: 'errorMissingColumn'
+}
+6:56:38 PM [express] GET /api/projects/2/staff 500 in 44ms :: {"message":"Internal server error","er…
+Error: error: column "phase_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectFiles (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:349:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:339:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 108,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '28',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:56:38 PM [express] GET /api/projects/2/files 500 in 44ms :: {"message":"Internal server error","er…
+6:56:38 PM [express] GET /api/clients/2 200 in 4ms :: {"id":2,"name":"شركة البناء الحديث","contactPe…
+6:56:56 PM [express] GET /api/users/11/attendance/today 200 in 10ms
+6:56:59 PM [express] POST /api/auth/logout 200 in 3ms :: {"success":true,"message":"Logged out succe…
+6:57:01 PM [express] GET /api/auth/me 401 in 0ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+6:57:13 PM [express] POST /api/auth/login 200 in 33ms :: {"user":{"id":1,"username":"admin","fullNam…
+6:57:13 PM [express] GET /api/users/1/notifications 304 in 6ms :: [{"id":16,"userId":1,"title":"تنبي…
+6:57:13 PM [express] GET /api/users 304 in 4ms :: [{"id":1,"username":"admin","password":"admin123",…
+Manager مدير النظام accessing 1 leave requests
+6:57:13 PM [express] GET /api/leave-requests 200 in 12ms :: [{"id":1,"userId":1,"type":"sick","start…
+6:57:13 PM [express] GET /api/projects 304 in 31ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+6:57:13 PM [express] GET /api/attendance/daily 304 in 36ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+6:57:14 PM [express] POST /api/notifications/residence-alert 200 in 8ms
+6:57:14 PM [express] GET /api/project-phases 200 in 10ms
+6:57:53 PM [express] GET /api/clients 304 in 32ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contac…
+6:57:56 PM [express] GET /api/projects/3 304 in 4ms :: {"id":3,"title":"فيلا عائلية فاخرة","descript…
+Error: error: column "phase_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectFiles (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:349:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:339:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 108,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '28',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:57:56 PM [express] GET /api/projects/3/files 500 in 6ms :: {"message":"Internal server error","err…
+Error: error: column "description" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getPhasesByProject (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:277:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:267:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '37',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+6:57:56 PM [express] GET /api/projects/3/phases 500 in 31ms :: {"message":"Internal server error","e…
+Error: error: column "assigned_date" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectStaff (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:323:25)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:179:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 185,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "project_staff.assigned_at".',
+  position: '39',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3729',
+  routine: 'errorMissingColumn'
+}
+6:57:56 PM [express] GET /api/projects/3/staff 500 in 36ms :: {"message":"Internal server error","er…
+6:57:56 PM [express] GET /api/clients/3 304 in 31ms :: {"id":3,"name":"مؤسسة التطوير العقاري","conta…
+Error: error: column "assigned_date" of relation "project_staff" does not exist
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.assignStaffToProject (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/storage.ts:303:26)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:187:26)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 139,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '61',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+6:58:02 PM [express] POST /api/project-staff 500 in 5ms :: {"message":"Internal server error","error…
+Project creation error: ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "null",
+    "path": [
+      "description"
+    ],
+    "message": "Expected string, received null"
+  }
+]
+    at get error (file:///home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/zod/lib/index.mjs:587:31)
+    at ZodObject.parse (file:///home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/zod/lib/index.mjs:663:22)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:230:47)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate._onImmediate (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21) {
+  issues: [
+    {
+      code: 'invalid_type',
+      expected: 'string',
+      received: 'null',
+      path: [Array],
+      message: 'Expected string, received null'
+    }
+  ],
+  addIssue: [Function (anonymous)],
+  addIssues: [Function (anonymous)],
+  errors: [
+    {
+      code: 'invalid_type',
+      expected: 'string',
+      received: 'null',
+      path: [Array],
+      message: 'Expected string, received null'
+    }
+  ]
+}
+6:59:42 PM [express] POST /api/projects 400 in 6ms :: {"message":"Invalid project data","errors":[{"…
+7:03:13 PM [express] GET /api/attendance 200 in 9ms
+7:03:13 PM [express] GET /api/attendance/today 304 in 43ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+7:03:15 PM [express] PATCH /api/attendance/3 500 in 3ms :: {"message":"Internal server error","error…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+7:03:22 PM [express] PATCH /api/attendance/3 500 in 2ms :: {"message":"Internal server error","error…
+Error: TypeError: storage.updateAttendance is not a function
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:608:40)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:365:14)
+    at param (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:376:14)
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:421:3)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate.<anonymous> (/home/usr/Desktop/ProductivityTracker(66)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21)
+7:03:27 PM [express] PATCH /api/attendance/3 500 in 2ms :: {"message":"Internal server error","error…
+7:03:38 PM [express] POST /api/auth/logout 200 in 0ms :: {"success":true,"message":"Logged out succe…
+7:03:40 PM [express] GET /api/auth/me 401 in 1ms :: {"message":"Not authenticated"}
+Login attempt for username: test
+User found: true
+User logged in successfully, session userId: 11
+7:03:43 PM [express] POST /api/auth/login 200 in 34ms :: {"user":{"id":11,"username":"test","fullNam…
+7:03:43 PM [express] GET /api/users/11/notifications 304 in 6ms :: []
+7:03:43 PM [express] GET /api/projects 200 in 3ms :: [{"id":1,"title":"برج الريادة السكني","descript…
+7:03:43 PM [express] GET /api/users 304 in 5ms :: [{"id":1,"username":"admin","password":"admin123",…
+7:03:43 PM [express] GET /api/attendance/daily 304 in 11ms :: [{"id":3,"userId":1,"date":"2025-07-14…
+7:03:43 PM [express] GET /api/clients 304 in 3ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contact…

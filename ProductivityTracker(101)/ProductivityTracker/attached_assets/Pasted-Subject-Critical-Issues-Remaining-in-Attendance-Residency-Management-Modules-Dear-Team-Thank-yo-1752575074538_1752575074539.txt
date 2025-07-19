@@ -1,0 +1,50 @@
+Subject: Critical Issues Remaining in Attendance & Residency Management Modules
+Dear Team,
+
+Thank you for the recent updates and RBAC improvements. However, several critical issues remain in the attendance and residency modules that need urgent attention for a fully seamless workflow:
+
+1. Attendance UI/UX and Logic Confusion
+The main attendance page contains multiple tab options at the top-left (e.g., daily attendance, manual attendance registration), but only "Attendance Management" works. The rest do nothing or are confusing.
+
+There is a clear duplication between "Attendance" and "Attendance Management" in the sidebar, but both ultimately do the same job. Please merge them into a single, streamlined attendance interface.
+
+Currently, you can register only "clock in" (الحضور) — but it is not possible to register "clock out" (الانصراف) for the same user on the same day. This breaks the attendance lifecycle. There must be an option for both check-in and check-out for any given day and employee.
+
+From the employee profile, manual attendance registration (presence/absence) fails with a generic error message.
+
+2. Attendance Counters/Status
+Even after recording attendance, sometimes the dashboard or main attendance page still shows "0 present" or does not update live.
+
+Attendance status updates do not always reflect across all related pages (dashboard, attendance list, employee page).
+
+3. Residency Notifications & Management
+Residency expiry notifications do appear in general notifications, but do not show in the Residency Management page. HR/Admin need to see a filtered list of employees whose residence permits are near expiry directly inside the residency management module.
+
+Residency notifications should only be visible to authorized roles (already improved), but the residency dashboard/page must show the correct data and allow easy review/action.
+
+4. General UI Consistency
+Some buttons/options at the top of the attendance page do not function. Only the main attendance management works; other buttons are confusing and redundant.
+
+Please simplify the attendance workflow to minimize user confusion.
+
+Requested Fixes & Recommendations
+Merge redundant attendance interfaces into a single clear module.
+
+Ensure full support for both clock in and clock out registration (and viewing) per employee per day.
+
+Fix live dashboard counters to always reflect actual attendance records instantly.
+
+Enable manual attendance registration from employee profile (with both check-in and check-out).
+
+Show expiring residencies clearly in the Residency Management module, not just notifications.
+
+Hide/disable any non-functional or redundant buttons from the UI.
+
+Add clear error messages with actionable instructions when something fails.
+
+Double-check RBAC on all sensitive operations to prevent unauthorized access.
+
+Screenshots are attached for your review.
+Please let me know if you need any extra logs, details, or access to replicate these issues.
+
+Thank you for your continuous support and looking forward to the fixes!

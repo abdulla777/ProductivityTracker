@@ -1,0 +1,41 @@
+Hi team,
+
+Thanks for the recent update. Here is a summary of the current system issues and required improvements:
+
+Current Issues Remaining:
+Leave Request Approval Workflow
+
+When an employee submits a leave request, it does not appear in the employee's own leave request list.
+
+In the HR Manager dashboard, when clicking "View All" under leave requests, no requests are displayed (even those already submitted or approved/rejected).
+
+There is no full leave request log: The HR Manager cannot view previous leave requests or their status (approved/rejected/pending).
+
+After the HR Manager approves or rejects a leave request, there is no notification sent back to the employee (the employee should receive a clear notification/alert for any action taken on their request).
+
+Residency Management
+
+The HR Manager can now access the Residency page, but data is incomplete or not accurate.
+
+When adding a new employee whose residency expires in less than 3 months, no notification is triggered in the alerts section.
+
+Backup & Restore
+
+Backup and restore functionality is not working or does not respond in the UI.
+
+(Previously solved) The "Register Attendance" button has been removed from the dashboard – thank you.
+
+Required Fixes and Improvements:
+Employees must be able to see their submitted leave requests and their current status.
+
+The HR Manager must see all leave requests in the "View All" page, with full log/history including status (pending/approved/rejected), and must be able to review past decisions.
+
+Notifications must be sent to the employee whenever their leave request is approved or rejected by the HR Manager.
+
+Residency notifications must trigger correctly if an employee's residency will expire in less than 3 months, and data in the Residency Management page must be accurate.
+
+Backup and restore features should work as described, with no UI or backend errors.
+
+Please focus on these points in your next update.
+If you need more technical details or reproduction steps, let us know.
+Thanks for your attention and effort!

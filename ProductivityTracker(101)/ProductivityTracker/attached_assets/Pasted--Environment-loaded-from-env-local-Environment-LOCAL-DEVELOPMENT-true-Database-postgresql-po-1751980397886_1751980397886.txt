@@ -1,0 +1,374 @@
+✅ Environment loaded from .env.local
+Environment: LOCAL_DEVELOPMENT=true
+Database: postgresql://postgres:password@localhost:5432/consulting_engineers
+Port: 5000
+
+📋 Testing database connection...
+✅ Database connection successful
+🔧 Checking database integrity...
+✅ Database schema verified
+
+📋 Starting application...
+🌐 Application will be available at: http://localhost:5000
+👤 Login: admin / admin123
+
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+4:07:59 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Error sending notification for test: error: column "sent_at" of relation "residence_notifications" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createResidenceNotification (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:780:28)
+    at async ResidenceNotificationService.sendNotification (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/residence-notification-service.ts:109:7)
+    at async ResidenceNotificationService.checkAndSendNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/residence-notification-service.ts:61:13) {
+  length: 143,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '93',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+Residence notification check completed
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+4:08:29 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+4:08:33 PM [express] POST /api/auth/login 200 in 39ms :: {"user":{"id":1,"username":"admin","fullNam…
+4:08:33 PM [express] GET /api/users/1/notifications 200 in 7ms :: [{"id":2,"userId":1,"title":"تحذير…
+4:08:33 PM [express] GET /api/users 304 in 5ms :: [{"id":1,"username":"admin","password":"admin123",…
+Error: error: column "title" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllProjects (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:221:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:135:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '14',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:08:33 PM [express] GET /api/projects 500 in 43ms :: {"message":"Internal server error","error":"co…
+Error: error: column "is_late" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:396:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:356:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 107,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '72',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:08:33 PM [express] GET /api/attendance/daily 500 in 41ms :: {"message":"Internal server error","er…
+Error: error: column "title" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllProjects (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:221:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:135:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '14',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:08:47 PM [express] GET /api/projects 500 in 35ms :: {"message":"Internal server error","error":"co…
+Error: error: column "is_late" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:396:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:356:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 107,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '72',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:08:47 PM [express] GET /api/attendance/daily 500 in 35ms :: {"message":"Internal server error","er…
+4:09:36 PM [express] GET /api/users/2 200 in 39ms :: {"id":2,"username":"hr_manager","password":"hr1…
+Error: error: column "is_late" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserAttendance (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:417:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:368:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 107,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '72',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:09:36 PM [express] GET /api/users/2/attendance 500 in 42ms :: {"message":"Internal server error","…
+4:09:36 PM [express] GET /api/users/2/projects 200 in 47ms :: []
+Error: error: column "rating" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getStaffEvaluations (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:463:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:419:25)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 106,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '39',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:09:36 PM [express] GET /api/users/2/evaluations 500 in 40ms :: {"message":"Internal server error",…
+Error: error: column "title" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllProjects (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:221:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:135:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '14',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:09:51 PM [express] GET /api/projects 500 in 33ms :: {"message":"Internal server error","error":"co…
+Error: error: column "notes" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllClients (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:195:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:86:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '69',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:09:51 PM [express] GET /api/clients 500 in 39ms :: {"message":"Internal server error","error":"col…
+Error: error: column "notes" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllClients (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:195:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:86:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '69',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:09:54 PM [express] GET /api/clients 500 in 31ms :: {"message":"Internal server error","error":"col…
+Error: error: column "updated_at" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllTasks (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:516:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:456:15)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 174,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: 'Perhaps you meant to reference the column "tasks.created_at".',
+  position: '129',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3729',
+  routine: 'errorMissingColumn'
+}
+Error: error: column "title" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getAllProjects (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:221:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:135:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '14',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:10:25 PM [express] GET /api/tasks 500 in 33ms :: {"message":"Internal server error","error":"colum…
+4:10:25 PM [express] GET /api/projects 500 in 32ms :: {"message":"Internal server error","error":"co…
+Error: error: column "is_late" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:396:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:356:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 107,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '72',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+4:10:43 PM [express] GET /api/attendance/daily 500 in 33ms :: {"message":"Internal server error","er…
+
+

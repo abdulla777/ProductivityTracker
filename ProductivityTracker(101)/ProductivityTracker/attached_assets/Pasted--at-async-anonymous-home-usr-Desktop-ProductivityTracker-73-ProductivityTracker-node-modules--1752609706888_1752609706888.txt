@@ -1,0 +1,53 @@
+  at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getPhasesByProject (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/storage.ts:281:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/routes.ts:267:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '37',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+11:00:17 PM [express] GET /api/projects/3/phases 500 in 6ms :: {"message":"Internal server error","er…
+Error: error: column "phase_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectFiles (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/storage.ts:353:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/routes.ts:339:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(73)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 108,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '28',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+11:00:17 PM [express] GET /api/projects/3/files 500 in 30ms :: {"message":"Internal server error","er…
+11:00:17 PM [express] GET /api/projects/3/staff 304 in 40ms :: [{"id":2,"projectId":3,"userId":2,"ass…
+11:00:17 PM [express] GET /api/clients/3 304 in 3ms :: {"id":3,"name":"مؤسسة التطوير العقاري","contac…
+
+

@@ -1,0 +1,90 @@
+sing local PostgreSQL connection
+🔄 Running database migrations...
+✅ Database schema is up to date
+✅ Attendance table verification passed - all required columns present
+1:37:13 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Checking test: 64 days until expiry
+Sent 3_months notification for test
+Residence notification check completed. Sent 1 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+1:37:50 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+1:37:50 PM [express] GET /api/projects 304 in 46ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+1:37:50 PM [express] GET /api/users 304 in 8ms :: [{"id":1,"username":"admin","password":"admin123",…
+1:37:50 PM [express] GET /api/attendance/daily 304 in 48ms :: [{"id":6,"userId":2,"date":"2025-07-15…
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+1:37:54 PM [express] POST /api/auth/login 200 in 7ms :: {"user":{"id":1,"username":"admin","fullName…
+1:37:54 PM [express] GET /api/users/1/notifications 200 in 9ms :: [{"id":28,"userId":1,"title":"تنبي…
+1:37:54 PM [express] POST /api/notifications/residence-alert 200 in 10ms
+Manager مدير النظام accessing 1 leave requests
+1:37:54 PM [express] GET /api/leave-requests 304 in 14ms :: [{"id":1,"userId":1,"type":"sick","start…
+1:37:54 PM [express] GET /api/project-phases 200 in 19ms
+User checking residence access: admin
+1:37:59 PM [express] GET /api/residence/expiring 200 in 9ms :: [{"id":11,"username":"test","password…
+1:37:59 PM [express] GET /api/notifications 200 in 11ms :: [{"id":28,"userId":1,"title":"تنبيه: الإق…
+1:38:05 PM [express] POST /api/notifications/residence-alert 200 in 8ms
+1:38:05 PM [express] GET /api/project-phases 200 in 12ms
+1:38:14 PM [express] GET /api/attendance/daily 304 in 50ms :: [{"id":6,"userId":2,"date":"2025-07-15…
+1:38:14 PM [express] GET /api/attendance/today 304 in 48ms :: [{"id":6,"userId":2,"date":"2025-07-15…
+Processed clockInTime: 09:00:00
+Processed clockOutTime: 17:00:00
+Attendance creation error: ZodError: [
+  {
+    "code": "invalid_type",
+    "expected": "string",
+    "received": "null",
+    "path": [
+      "notes"
+    ],
+    "message": "Expected string, received null"
+  }
+]
+    at get error (file:///home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/zod/lib/index.mjs:587:31)
+    at ZodObject.parse (file:///home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/zod/lib/index.mjs:663:22)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/server/routes.ts:470:53)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/server/routes.ts:26:13)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at /home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at <anonymous> (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/server/index.ts:51:3)
+    at Layer.handle [as handle_request] (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:328:13)
+    at /home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:286:9
+    at Function.process_params (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:346:12)
+    at next (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express/lib/router/index.js:280:10)
+    at Immediate._onImmediate (/home/usr/Desktop/ProductivityTracker(69)./ProductivityTracker/node_modules/express-session/index.js:514:7)
+    at process.processImmediate (node:internal/timers:487:21) {
+  issues: [
+    {
+      code: 'invalid_type',
+      expected: 'string',
+      received: 'null',
+      path: [Array],
+      message: 'Expected string, received null'
+    }
+  ],
+  addIssue: [Function (anonymous)],
+  addIssues: [Function (anonymous)],
+  errors: [
+    {
+      code: 'invalid_type',
+      expected: 'string',
+      received: 'null',
+      path: [Array],
+      message: 'Expected string, received null'
+    }
+  ]
+}
+1:38:30 PM [express] POST /api/attendance 400 in 22ms :: {"message":"Invalid attendance data","error…
+^C
+usr@usr:~/Desktop/ProductivityTracker(69)./ProductivityTracker$ 
+

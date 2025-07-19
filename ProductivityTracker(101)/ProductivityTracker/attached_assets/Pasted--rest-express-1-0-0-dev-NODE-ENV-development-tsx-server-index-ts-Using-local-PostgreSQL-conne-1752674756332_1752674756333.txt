@@ -1,0 +1,213 @@
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+🔄 Running database migrations...
+✅ Database schema is up to date
+✅ Attendance table verification passed - all required columns present
+5:00:39 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Found 0 users with expiring residences
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+5:02:04 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+5:02:04 PM [express] GET /api/projects 401 in 1ms :: {"message":"Not authenticated"}
+5:02:04 PM [express] GET /api/users 304 in 66ms :: [{"id":1,"username":"admin","password":"admin123"…
+5:02:04 PM [express] GET /api/attendance/daily 304 in 93ms :: [{"id":10,"userId":11,"date":"2025-07-…
+5:02:07 PM [express] GET /api/auth/me 401 in 0ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+5:02:09 PM [express] POST /api/auth/login 200 in 5ms :: {"user":{"id":1,"username":"admin","fullName…
+5:02:09 PM [express] GET /api/users 304 in 3ms :: [{"id":1,"username":"admin","password":"admin123",…
+5:02:09 PM [express] GET /api/projects 200 in 11ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+5:02:09 PM [express] GET /api/users/1/notifications 304 in 24ms :: [{"id":52,"userId":1,"title":"تنب…
+Manager مدير النظام accessing 1 leave requests
+5:02:09 PM [express] GET /api/leave-requests 304 in 41ms :: [{"id":1,"userId":1,"type":"sick","start…
+5:02:09 PM [express] GET /api/attendance/daily 304 in 54ms :: [{"id":10,"userId":11,"date":"2025-07-…
+5:02:10 PM [express] GET /api/project-phases 200 in 8ms
+5:02:14 PM [express] GET /api/clients 304 in 6ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contact…
+Error getting phases for project: 2 error: column "description" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getPhasesByProject (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:308:14)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:316:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '37',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+Description column missing, returning empty array
+5:04:36 PM [express] GET /api/projects/2/phases 304 in 63ms :: []
+5:04:36 PM [express] GET /api/projects/2 304 in 76ms :: {"id":2,"title":"مجمع مكاتب الأعمال","descri…
+Error getting project files: 2 error: column "phase_id" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getProjectFiles (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:409:14)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:388:19)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 108,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '28',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+Phase_id column missing, returning empty array
+5:04:36 PM [express] GET /api/projects/2/files 304 in 76ms :: []
+5:04:36 PM [express] GET /api/projects/2/staff 304 in 89ms :: [{"id":1,"projectId":2,"userId":2,"ass…
+5:04:37 PM [express] GET /api/clients/2 304 in 3ms :: {"id":2,"name":"شركة البناء الحديث","contactPe…
+Adding project file with data: {
+  projectId: 2,
+  phaseId: null,
+  fileName: 'fddfdf.jpg',
+  fileDescription: null,
+  fileType: 'image/jpeg',
+  fileUrl: 'https://example.com/files/1752674683834-fddfdf.jpg',
+  uploadedBy: 1
+}
+Error adding project file: error: column "phase_id" of relation "project_files" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.addProjectFile (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:385:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:401:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+Error details: column "phase_id" of relation "project_files" does not exist
+Error: error: column "phase_id" of relation "project_files" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.addProjectFile (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:385:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:401:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+5:04:45 PM [express] POST /api/project-files 500 in 10ms :: {"message":"Internal server error","erro…
+Adding project file with data: {
+  projectId: 2,
+  phaseId: null,
+  fileName: 'fddfdf.jpg',
+  fileDescription: null,
+  fileType: 'image/jpeg',
+  fileUrl: 'https://example.com/files/1752674683834-fddfdf.jpg',
+  uploadedBy: 1
+}
+Error adding project file: error: column "phase_id" of relation "project_files" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.addProjectFile (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:385:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:401:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+Error details: column "phase_id" of relation "project_files" does not exist
+Error: error: column "phase_id" of relation "project_files" does not exist
+    at /home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.addProjectFile (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/storage.ts:385:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:401:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(84)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '50',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+5:05:00 PM [express] POST /api/project-files 500 in 30ms :: {"message":"Internal server error","erro…
+
+

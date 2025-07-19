@@ -1,0 +1,120 @@
+hecking PostgreSQL...
+Testing database connection...
+Starting application with local environment...
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+12:47:46 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Error in residence notification service: error: column "nationality" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.checkExpiringResidences (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:793:27)
+    at async ResidenceNotificationService.checkAndSendNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/residence-notification-service.ts:49:25) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '90',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+12:48:43 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+Login error: error: column "nationality" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserByUsername (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:147:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:545:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '90',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+12:48:50 PM [express] POST /api/auth/login 500 in 52ms :: {"message":"Internal server error during lo…
+Login attempt for username: admin
+Login error: error: column "nationality" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserByUsername (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:147:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:545:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '90',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+12:48:57 PM [express] POST /api/auth/login 500 in 32ms :: {"message":"Internal server error during lo…
+Login attempt for username: admin
+Login error: error: column "nationality" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserByUsername (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:147:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:545:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 111,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '90',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+12:49:15 PM [express] POST /api/auth/login 500 in 34ms :: {"message":"Internal server error during lo…

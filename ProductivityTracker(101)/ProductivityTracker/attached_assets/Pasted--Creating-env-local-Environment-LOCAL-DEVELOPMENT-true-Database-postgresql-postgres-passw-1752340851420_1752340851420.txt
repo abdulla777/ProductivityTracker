@@ -1,0 +1,557 @@
+  Creating .env.local...
+Environment: LOCAL_DEVELOPMENT=true
+Database: postgresql://postgres:password@localhost:5432/consulting_engineers
+Port: 5000
+
+📋 Testing database connection...
+✅ Database connection successful
+🔧 Checking database integrity...
+✅ Database schema verified
+
+📋 Starting application...
+🌐 Application will be available at: http://localhost:5000
+👤 Login: admin / admin123
+
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+8:09:37 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Residence notification check completed. Sent 0 notifications.
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+8:10:26 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+8:10:26 PM [express] GET /api/users 200 in 39ms :: [{"id":1,"username":"admin","password":"admin123"…
+8:10:26 PM [express] GET /api/projects 200 in 43ms :: [{"id":1,"title":"برج الريادة السكني","descrip…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:10:26 PM [express] GET /api/attendance/daily 500 in 49ms :: {"message":"Internal server error","er…
+Login attempt for username: admin
+User found: true
+User logged in successfully, session userId: 1
+8:10:30 PM [express] POST /api/auth/login 200 in 8ms :: {"user":{"id":1,"username":"admin","fullName…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:10:31 PM [express] GET /api/attendance/daily 500 in 6ms :: {"message":"Internal server error","err…
+8:10:31 PM [express] GET /api/users/1/notifications 200 in 7ms :: []
+Manager مدير النظام accessing 0 leave requests
+8:10:31 PM [express] GET /api/leave-requests 304 in 11ms :: []
+8:10:31 PM [express] GET /api/project-phases 200 in 14ms
+8:11:13 PM [express] GET /api/clients 200 in 33ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contac…
+8:11:13 PM [express] GET /api/clients/1/projects 200 in 9ms :: [{"id":1,"title":"برج الريادة السكني"…
+8:11:13 PM [express] GET /api/clients/3/projects 200 in 6ms :: [{"id":3,"title":"فيلا عائلية فاخرة",…
+8:11:13 PM [express] GET /api/clients/2/projects 200 in 42ms :: [{"id":2,"title":"مجمع مكاتب الأعمال…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:11:19 PM [express] GET /api/attendance/daily 500 in 5ms :: {"message":"Internal server error","err…
+8:11:19 PM [express] GET /api/project-phases 200 in 9ms
+User checking residence access: admin
+8:11:21 PM [express] GET /api/residence/expiring 200 in 10ms :: []
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:11:23 PM [express] GET /api/attendance/daily 500 in 6ms :: {"message":"Internal server error","err…
+8:11:23 PM [express] GET /api/project-phases 200 in 13ms
+8:11:39 PM [express] GET /api/users/1/attendance/today 200 in 17ms
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:423:12)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:405:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:11:39 PM [express] GET /api/users/1/attendance 500 in 47ms :: {"message":"Internal server error","…
+Storing attendance with times: { clockInTime: null, clockOutTime: null, isLate: false }
+Attendance creation error: error: column "clock_in_time" of relation "attendance" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:454:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 136,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '52',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+Error: error: column "clock_in_time" of relation "attendance" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:454:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 136,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '52',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+8:11:41 PM [express] POST /api/attendance 500 in 40ms :: {"message":"Internal server error","error":…
+8:12:12 PM [express] POST /api/leave-requests 201 in 35ms :: {"id":1,"userId":1,"type":"annual","sta…
+Manager مدير النظام accessing 1 leave requests
+8:12:12 PM [express] GET /api/leave-requests 200 in 7ms :: [{"id":1,"userId":1,"type":"annual","star…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:12:17 PM [express] GET /api/attendance/daily 500 in 6ms :: {"message":"Internal server error","err…
+8:12:17 PM [express] GET /api/project-phases 200 in 8ms
+8:12:21 PM [express] GET /api/auth/me 200 in 34ms :: {"id":1,"username":"admin","fullName":"مدير الن…
+8:12:21 PM [express] GET /api/projects 304 in 5ms :: [{"id":1,"title":"برج الريادة السكني","descript…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:12:21 PM [express] GET /api/attendance/daily 500 in 38ms :: {"message":"Internal server error","er…
+8:12:21 PM [express] GET /api/users 304 in 42ms :: [{"id":1,"username":"admin","password":"admin123"…
+8:12:21 PM [express] GET /api/users/1/notifications 304 in 7ms :: []
+Manager مدير النظام accessing 1 leave requests
+8:12:21 PM [express] GET /api/leave-requests 304 in 10ms :: [{"id":1,"userId":1,"type":"annual","sta…
+8:12:21 PM [express] GET /api/project-phases 200 in 9ms
+✅ Created approved notification for employee مدير النظام
+8:12:25 PM [express] PATCH /api/leave-requests/1 200 in 19ms :: {"id":1,"userId":1,"type":"annual","…
+Manager مدير النظام accessing 1 leave requests
+8:12:25 PM [express] GET /api/leave-requests 200 in 7ms :: [{"id":1,"userId":1,"type":"annual","star…
+8:12:40 PM [express] POST /api/auth/logout 200 in 2ms :: {"success":true,"message":"Logged out succe…
+8:12:42 PM [express] GET /api/auth/me 401 in 0ms :: {"message":"Not authenticated"}
+Login attempt for username: hr_manager
+User found: true
+User logged in successfully, session userId: 2
+8:12:44 PM [express] POST /api/auth/login 200 in 31ms :: {"user":{"id":2,"username":"hr_manager","fu…
+8:12:44 PM [express] GET /api/users/2/notifications 200 in 6ms :: []
+8:12:44 PM [express] GET /api/projects 304 in 4ms :: [{"id":1,"title":"برج الريادة السكني","descript…
+Manager مدير الموارد البشرية accessing 1 leave requests
+8:12:44 PM [express] GET /api/leave-requests 304 in 10ms :: [{"id":1,"userId":1,"type":"annual","sta…
+8:12:44 PM [express] GET /api/users 304 in 34ms :: [{"id":1,"username":"admin","password":"admin123"…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:12:44 PM [express] GET /api/attendance/daily 500 in 29ms :: {"message":"Internal server error","er…
+8:12:45 PM [express] GET /api/project-phases 200 in 10ms
+User checking residence access: hr_manager
+8:12:47 PM [express] GET /api/residence/expiring 304 in 7ms :: []
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:12:49 PM [express] GET /api/attendance/daily 500 in 3ms :: {"message":"Internal server error","err…
+8:12:49 PM [express] GET /api/project-phases 200 in 9ms
+8:13:29 PM [express] GET /api/clients 304 in 31ms :: [{"id":1,"name":"شركة الخليج للمقاولات","contac…
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:541:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:13:31 PM [express] GET /api/attendance/today 500 in 7ms :: {"message":"Internal server error","err…
+8:13:31 PM [express] GET /api/attendance 200 in 16ms
+Storing attendance with times: { clockInTime: null, clockOutTime: null, isLate: false }
+Attendance creation error: error: column "clock_in_time" of relation "attendance" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:454:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 136,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '52',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+Error: error: column "clock_in_time" of relation "attendance" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.recordAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:392:22)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:454:32)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 136,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '52',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_target.c',
+  line: '1066',
+  routine: 'checkInsertTargets'
+}
+8:13:54 PM [express] POST /api/attendance 500 in 29ms :: {"message":"Internal server error","error":…
+8:14:15 PM [express] GET /api/attendance 200 in 6ms
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:541:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:14:15 PM [express] GET /api/attendance/today 500 in 39ms :: {"message":"Internal server error","er…
+8:14:19 PM [express] GET /api/opportunities 200 in 33ms :: []
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:14:21 PM [express] GET /api/attendance/daily 500 in 6ms :: {"message":"Internal server error","err…
+8:14:21 PM [express] GET /api/project-phases 200 in 7ms
+8:16:14 PM [express] POST /api/users 201 in 32ms :: {"id":8,"username":"test","password":"test123","…
+8:16:14 PM [express] GET /api/users 200 in 3ms :: [{"id":1,"username":"admin","password":"admin123",…
+8:16:16 PM [express] POST /api/notifications/residence-alert 200 in 8ms
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:16:16 PM [express] GET /api/attendance/daily 500 in 5ms :: {"message":"Internal server error","err…
+8:16:17 PM [express] GET /api/project-phases 200 in 15ms
+8:17:40 PM [express] POST /api/notifications/residence-alert 200 in 14ms
+8:17:40 PM [express] GET /api/project-phases 200 in 15ms
+Error: error: column "clock_in_time" does not exist
+    at /home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getDailyAttendance (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/storage.ts:402:21)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:393:24)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker(51)./ProductivityTracker/server/routes.ts:26:7) {
+  length: 113,
+  severity: 'ERROR',
+  code: '42703',
+  detail: undefined,
+  hint: undefined,
+  position: '33',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '3722',
+  routine: 'errorMissingColumn'
+}
+8:17:40 PM [express] GET /api/attendance/daily 500 in 45ms :: {"message":"Internal server error","er…
+
+

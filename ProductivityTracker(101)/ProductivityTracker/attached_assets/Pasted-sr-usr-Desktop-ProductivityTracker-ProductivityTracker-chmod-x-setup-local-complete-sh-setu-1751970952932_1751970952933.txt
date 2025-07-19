@@ -1,0 +1,223 @@
+sr@usr:~/Desktop/ProductivityTracker/ProductivityTracker$ chmod +x setup-local-complete.sh && ./setup-local-complete.sh
+🚀 Complete Local Setup for Consulting Engineers Management System
+=================================================================
+ℹ Updating system packages...
+[sudo] password for usr: 
+Hit:1 http://sa.archive.ubuntu.com/ubuntu noble InRelease
+Hit:2 http://sa.archive.ubuntu.com/ubuntu noble-updates InRelease              
+Hit:3 http://sa.archive.ubuntu.com/ubuntu noble-backports InRelease            
+Hit:4 https://deb.nodesource.com/node_18.x nodistro InRelease                  
+Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease             
+Reading package lists... Done                          
+Building dependency tree... Done
+Reading state information... Done
+17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+✓ PostgreSQL already installed
+ℹ Starting PostgreSQL service...
+Synchronizing state of postgresql.service with SysV service script with /usr/lib/systemd/systemd-sysv-install.
+Executing: /usr/lib/systemd/systemd-sysv-install enable postgresql
+✓ PostgreSQL service started
+ℹ Setting up database and user...
+Password for user postgres: 
+DROP DATABASE
+Password for user postgres: 
+CREATE DATABASE
+Password for user postgres: 
+ERROR:  current user cannot be dropped
+Password for user postgres: 
+ERROR:  role "postgres" already exists
+Password for user postgres: 
+ALTER ROLE
+Password for user postgres: 
+GRANT
+✓ Database and user created
+✓ Node.js already installed (v22.17.0)
+ℹ Installing project dependencies...
+
+up to date, audited 511 packages in 2s
+
+69 packages are looking for funding
+  run `npm fund` for details
+
+7 vulnerabilities (1 low, 6 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✓ Dependencies installed
+ℹ Adding PostgreSQL driver...
+
+up to date, audited 511 packages in 3s
+
+69 packages are looking for funding
+  run `npm fund` for details
+
+7 vulnerabilities (1 low, 6 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+✓ PostgreSQL driver added
+ℹ Creating local environment file...
+✓ Environment file created (.env.local)
+ℹ Initializing database schema...
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+DO
+psql:init-local-db.sql:84: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:85: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:86: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:87: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:99: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:110: ERROR:  relation "users" does not exist
+psql:init-local-db.sql:117: ERROR:  relation "users" does not exist
+LINE 1: INSERT INTO users (username, password, full_name, email, rol...
+                    ^
+psql:init-local-db.sql:124: ERROR:  relation "users" does not exist
+LINE 1: INSERT INTO users (username, password, full_name, email, rol...
+                    ^
+psql:init-local-db.sql:135: ERROR:  relation "users" does not exist
+LINE 1: INSERT INTO users (username, password, full_name, email, rol...
+                    ^
+            info            
+----------------------------
+ Users with residence data:
+(1 row)
+
+psql:init-local-db.sql:141: ERROR:  relation "users" does not exist
+LINE 2: FROM users 
+             ^
+           info           
+--------------------------
+ Database tables created:
+(1 row)
+
+ table_name 
+------------
+(0 rows)
+
+✓ Database schema initialized
+ℹ Creating local startup script...
+✓ Local startup script created (start-local.sh)
+ℹ Testing database connection...
+         status         
+------------------------
+ Connection successful!
+(1 row)
+
+✓ Database connection test successful
+
+🎉 Setup Complete!
+==================
+✓ PostgreSQL installed and configured
+✓ Database 'consulting_engineers' created
+✓ Schema initialized with residence management
+✓ Admin user: admin / admin123
+✓ HR Manager: hr_manager / hr123
+✓ Test residents created
+
+🚀 To start the application:
+   ./start-local.sh
+
+🌐 Application will be available at:
+   http://localhost:5000
+
+ℹ All residence management features are ready:
+ℹ - Staff creation with nationality selection
+ℹ - Residence permit tracking
+ℹ - Automated expiry notifications
+ℹ - HR renewal workflow
+usr@usr:~/Desktop/ProductivityTracker/ProductivityTracker$ ./run-locally.sh            # لتشغيل التطبيق بالبيئة المحلية
+🚀 Starting Application in Local Mode
+=====================================
+Environment Variables Set:
+NODE_ENV: development
+LOCAL_DEVELOPMENT: true
+DATABASE_URL: postgresql://postgres:password@localhost:5432/consulting_engineers
+PORT: 5000
+
+Checking PostgreSQL...
+Testing database connection...
+Starting application with local environment...
+
+> rest-express@1.0.0 dev
+> NODE_ENV=development tsx server/index.ts
+
+Using local PostgreSQL connection
+1:34:42 PM [express] serving on port 5000
+Starting residence notification service with 24h interval
+Running residence notification check...
+Error in checkExpiringResidences: error: relation "users" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.checkExpiringResidences (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:794:29)
+    at async ResidenceNotificationService.checkAndSendNotifications (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/residence-notification-service.ts:49:25) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '188',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+Residence notification check completed
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+1:34:58 PM [express] GET /api/auth/me 401 in 3ms :: {"message":"Not authenticated"}
+Login attempt for username: admin
+Login error: error: relation "users" does not exist
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.getUserByUsername (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:147:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:545:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 105,
+  severity: 'ERROR',
+  code: '42P01',
+  detail: undefined,
+  hint: undefined,
+  position: '188',
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: undefined,
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'parse_relation.c',
+  line: '1449',
+  routine: 'parserOpenTable'
+}
+1:35:01 PM [express] POST /api/auth/login 500 in 42ms :: {"message":"Internal server error during lo…

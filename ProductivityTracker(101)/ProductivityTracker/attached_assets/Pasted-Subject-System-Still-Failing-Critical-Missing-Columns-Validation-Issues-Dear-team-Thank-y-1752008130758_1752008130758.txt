@@ -1,0 +1,86 @@
+Subject: ⚠️ System Still Failing – Critical Missing Columns & Validation Issues
+
+Dear team,
+
+Thank you for your previous efforts in fixing the is_active and residence_status issues. However, after deploying the latest build, the system is still not functional, and I’m encountering multiple new critical issues that prevent full use of the system.
+
+🔴 Current System Status (as of now):
+✅ Login works
+✅ Tasks and opportunities can be added
+❌ But the following are completely broken:
+
+Cannot add projects
+
+Cannot add employees
+
+Cannot add clients
+
+Cannot view or add residency information
+
+Notifications crash the system
+
+expiringUsers.map is not a function frontend error
+
+🔥 Root Cause: Missing Columns in Database
+The following critical columns are still absent from the database schema:
+
+1. reference_id
+Used in: notifications, projects, users
+Error:
+
+go
+Copy
+Edit
+error: column "reference_id" does not exist
+2. Input validation is broken on user creation
+Error:
+
+lua
+Copy
+Edit
+invalid input syntax for type date: ""
+→ User creation fails silently due to missing or empty required date fields (e.g. employment date, birthdate).
+
+3. expiringUsers.map frontend crash
+→ Likely caused by backend returning null or non-array format in /api/residence/expiring
+
+✅ Required Immediate Fixes:
+Add reference_id column to notifications table:
+
+sql
+Copy
+Edit
+ALTER TABLE notifications ADD COLUMN reference_id INTEGER;
+Update backend logic to validate date fields or assign defaults if empty.
+
+Ensure expiringUsers is always returned as an array from backend.
+
+Include the above fixes in:
+
+init-local-db.sql
+
+create-full-schema.sql
+
+fix-columns.sql
+
+complete_database_backup.sql
+
+Add all critical column checks to validate-database-schema.sh with proper error messages.
+
+📦 Suggested Action:
+Please send me an updated ZIP package or Git commit with:
+
+All the missing columns added
+
+A fully working schema (not just partial fixes)
+
+Updated validation on API level
+
+A tested flow for adding employees, clients, and projects
+
+⚠️ Without this, the system cannot be tested or delivered. I'm close to delivery deadline and these structural issues are causing serious delays.
+
+I’m ready to test immediately once a stable build is available.
+
+Best regards,
+Abdullah

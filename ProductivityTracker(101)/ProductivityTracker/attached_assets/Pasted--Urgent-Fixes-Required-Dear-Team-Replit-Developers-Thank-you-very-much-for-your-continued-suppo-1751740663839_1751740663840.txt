@@ -1,0 +1,74 @@
+ Urgent Fixes Required
+
+Dear [Team/Replit Developers],
+
+Thank you very much for your continued support. The system is now up and running successfully on the local environment (Ubuntu server), and we appreciate all the effort in resolving the previous issues.
+
+However, we've encountered several critical issues that need to be addressed before we can proceed with production deployment.
+
+✅ Critical Issues (Local Environment):
+🛠 Task Creation Not Working
+
+Submitting a new task does nothing.
+
+Console/logs show a foreign key constraint error.
+
+No task is actually saved.
+
+👤 Cannot Assign Employees to Projects
+
+There's no available interface or option to assign users to projects from the project creation or detail page.
+
+📛 UI Bug – Logo Overlap in Header
+
+A broken logo appears in the top navigation next to the search bar, overlapping with Arabic/English labels.
+
+Please remove the logo from the header and keep only the sidebar version.
+
+🧾 Attendance Registration Fails
+
+Error message appears:
+"حدث خطأ أثناء تسجيل الحضور، يرجى المحاولة مرة أخرى"
+
+The attendance is not saved in the database.
+
+💼 Commercial Opportunities – Submission Fails
+
+Adding a new opportunity results in error message:
+"خطأ في إنشاء الفرصة، يرجى المحاولة مرة أخرى"
+
+Form data is valid, but submission fails.
+
+📊 Reports – Print Button Not Working
+
+Cannot print reports. Nothing happens when the print button is clicked.
+
+🧑‍💼 Employee Services – Leave Requests Issues:
+
+Submitted leave requests do not appear in the system.
+
+Leave types do not display properly in the dropdown list.
+
+🔄 Leave Request Approval Workflow (Requested Enhancement):
+Please adjust the workflow to the following:
+
+Employee submits a leave request
+
+The request must be sent to:
+
+Project Manager
+
+HR Manager (New role needed)
+
+Both must approve before the request is confirmed.
+
+🧑‍💼 Additional User Roles Request:
+Role	Privileges
+HR Manager	Can approve/reject leave requests
+General Manager	Can view all records in the system, except private data of System Admins
+
+We are currently testing exclusively on the local environment (not Replit). Please prioritize resolving these issues so we can continue with internal rollout and evaluation.
+
+Thank you again for your help and support.
+
+Best regards,

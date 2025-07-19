@@ -1,0 +1,66 @@
+sing local PostgreSQL connection
+8:29:10 PM [express] serving on port 5000
+Browserslist: browsers data (caniuse-lite) is 9 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+8:29:23 PM [express] GET /api/auth/me 401 in 5ms :: {"message":"Not authenticated"}
+8:29:23 PM [express] GET /api/attendance/daily 304 in 74ms :: []
+8:29:23 PM [express] GET /api/projects 304 in 91ms :: [{"id":2,"title":"test","description":"","clie…
+8:29:23 PM [express] GET /api/users 200 in 80ms :: [{"id":18,"username":"admin","password":"admin123…
+8:29:23 PM [express] GET /api/users/18/notifications 304 in 8ms :: []
+8:29:24 PM [express] GET /api/project-phases 200 in 20ms
+8:29:39 PM [express] GET /api/clients 304 in 32ms :: [{"id":1,"name":"test","contactPerson":"test","…
+Error: error: invalid input value for enum role: "general_manager"
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createUser (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:144:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:55:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 139,
+  severity: 'ERROR',
+  code: '22P02',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $6 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'enum.c',
+  line: '129',
+  routine: 'enum_in'
+}
+8:30:20 PM [express] POST /api/users 500 in 41ms :: {"message":"Internal server error","error":"inva…
+Error: error: invalid input value for enum role: "hr_manager"
+    at /home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/node_modules/src/node-postgres/session.ts:104:19)
+    at async DatabaseStorage.createUser (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/storage.ts:144:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:55:20)
+    at async <anonymous> (/home/usr/Desktop/ProductivityTracker/ProductivityTracker/server/routes.ts:26:7) {
+  length: 134,
+  severity: 'ERROR',
+  code: '22P02',
+  detail: undefined,
+  hint: undefined,
+  position: undefined,
+  internalPosition: undefined,
+  internalQuery: undefined,
+  where: "unnamed portal parameter $6 = '...'",
+  schema: undefined,
+  table: undefined,
+  column: undefined,
+  dataType: undefined,
+  constraint: undefined,
+  file: 'enum.c',
+  line: '129',
+  routine: 'enum_in'
+}
+8:30:31 PM [express] POST /api/users 500 in 31ms :: {"message":"Internal server error","error":"inva…
+
+

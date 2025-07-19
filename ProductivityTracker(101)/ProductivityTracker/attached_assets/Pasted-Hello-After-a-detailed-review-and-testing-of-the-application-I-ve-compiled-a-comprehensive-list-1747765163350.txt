@@ -1,0 +1,93 @@
+Hello,
+
+After a detailed review and testing of the application, I’ve compiled a comprehensive list of issues and enhancement requests that are essential to the system's functionality, user experience, and access control.
+
+Please review and implement the following:
+
+---
+
+### ✅ 1. Missing Translations
+
+Many UI texts still appear in Arabic even when the selected language is English. These include:
+
+- "Client Information", "Client Projects", "Notes", "Add", "Edit", "Delete", etc.
+- Notes section: "No notes available", "Add a new note..."
+
+🔧 **Fix:** Use the `useTranslation()` hook and update all hardcoded strings. Add proper keys to both `en/common.json` and `ar/common.json`.
+
+---
+
+### 🔐 2. Missing Role-Based Access Control (RBAC)
+
+Currently, all users (including engineers) can:
+
+- Access management-level actions like adding/deleting staff
+- View or interact with sections that should be restricted
+
+🔧 **Fix:**
+- Only `admin` and `hr` roles should be allowed to add/edit staff
+- Restrict buttons and page access based on `user.role`
+- Use conditional rendering for sensitive components
+
+---
+
+### ⚠️ 3. Attendance Access Incorrect
+
+- Project Managers and staff can access and view all attendance records and mark attendance for others.
+
+🔧 **Fix:**
+- Only `admin` should access global attendance reports
+- Staff should only be able to view or record **their own** attendance
+
+---
+
+### 🚫 4. Settings Icon Not Working
+
+The icons in the top navigation bar (Settings ⚙️, Notifications 🔔) currently do nothing on click.
+
+🔧 **Fix:**
+- Settings icon should link to the Settings page or open preferences
+- Notifications icon should display a panel or show a message like "No new notifications"
+
+---
+
+### 🌐 5. Language Selection Hidden from Staff
+
+Staff cannot change the language since they don’t have access to Settings.
+
+🔧 **Fix:**
+- Move the language selector to a globally accessible location (e.g., navbar or sidebar)
+- All users, regardless of role, should be able to switch languages
+
+---
+
+### 🧾 6. Staff Services Module Is Missing
+
+The system lacks a section where employees can:
+
+- Request time off (leave, sick days)
+- View their attendance history
+- Download work certificates or update personal data
+
+🛠 **Suggested addition:** Create a dedicated section (e.g., `Employee Services` or `My HR`) accessible to regular staff, with integration into the HR logic.
+
+---
+
+### 📋 7. Notes Section Improvements
+
+The current notes feature lacks metadata and control:
+
+- Notes have no author or timestamp
+- Users cannot edit or delete notes
+
+🔧 **Fix:**
+- Store and display note metadata (author + date)
+- Add edit/delete controls with permission based on creator or admin role
+
+---
+
+We appreciate the progress made so far, and we’re confident these updates will significantly improve the usability, security, and functionality of the system.
+
+Please let us know once the changes are applied so we can perform another round of testing and feedback.
+
+Thank you!

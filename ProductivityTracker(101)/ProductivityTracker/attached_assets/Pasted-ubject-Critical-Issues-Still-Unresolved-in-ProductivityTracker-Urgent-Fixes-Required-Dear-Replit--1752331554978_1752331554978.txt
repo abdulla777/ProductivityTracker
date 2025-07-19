@@ -1,0 +1,103 @@
+ubject: Critical Issues Still Unresolved in ProductivityTracker – Urgent Fixes Required
+Dear Replit Development Team,
+After testing the latest provided version of the project, I am still experiencing several critical issues that prevent the system from functioning as expected. Below is a detailed report, including screenshots and terminal logs, with clear proposed solutions.
+
+1. Manual Attendance Registration Not Working
+Error Message:
+When attempting to register manual attendance, the following error consistently appears:
+
+swift
+Copy
+Edit
+message: "Internal server error", error: "column \"clock_in_time\" of relation \"attendance\" does not exist"
+Screenshot: (see attached for visual reference)
+
+Root Cause:
+The backend expects the columns clock_in_time and clock_out_time in the attendance table, but these columns are missing from the database schema.
+
+Impact:
+No attendance data can be created or viewed; this breaks the core attendance management feature for all roles.
+
+Suggested Solution:
+
+Immediate: Execute a database migration to add the required columns:
+
+sql
+Copy
+Edit
+ALTER TABLE attendance
+  ADD COLUMN clock_in_time TIME,
+  ADD COLUMN clock_out_time TIME;
+Review all backend queries to ensure column names are consistent between code and schema.
+
+2. Residence Expiry Notification Not Triggering
+Issue:
+When editing an employee and setting their residence expiry date to less than 3 months ahead, no notification appears in the residence management section, and the employee does not show up in the "expiring soon" list.
+
+Screenshot: (see attached – shows no notification despite the employee's updated expiry date)
+
+Root Cause:
+The notification logic does not check/trigger on user data updates, only on a scheduled interval. Also, there might be a logic flaw in the backend or frontend filtering.
+
+Suggested Solution:
+
+Immediate: Ensure that whenever an employee’s residence expiry date is updated (PUT/PATCH to the user endpoint), the notification service is triggered immediately and not just on a 24-hour interval.
+
+Backend Logic: Review residence expiry check – it should always compare the date using DATEDIFF or equivalent, and must include updated users.
+
+Frontend: Refresh notification widget after editing user data.
+
+3. Backup and Restore Inconsistency
+Issue:
+Backup is available and can be downloaded from System Management, but restore from a previous backup does not work properly (from both Settings and System Management).
+
+Screenshot: (see attached if needed)
+
+Root Cause:
+The restore feature is either incomplete or not fully integrated across all UI locations, leading to confusion and potential data loss.
+
+Suggested Solution:
+
+Unify the backup/restore logic and components between all system pages.
+
+Ensure restore endpoint is fully implemented and tested with the latest backup format.
+
+Provide user feedback if a restore fails (currently, there is no meaningful error message).
+
+4. Additional Schema Issues
+Error:
+Other logs indicate queries fail due to missing columns like "assigned_date" in project_staff (should be "assigned_at") and missing table "staff_evaluations".
+
+Suggested Solution:
+
+Review all schema migrations and cross-check with ORM/models.
+
+Add any missing columns/tables or fix code references to use the correct names.
+
+5. General Recommendations for Project Stability
+Database Migration:
+Please provide a complete migration script or SQL dump that ensures the local PostgreSQL schema matches what the application expects.
+
+End-to-End Testing:
+Implement automated tests to verify critical user flows (attendance, leave requests, notifications, backup/restore).
+
+Frontend Error Handling:
+Show clear, user-friendly error messages when backend/API errors occur (not just "Internal server error").
+
+Summary Table of Issues
+Issue	Impact	Fix Status	Proposed Solution
+Attendance registration	BLOCKER	❌	Add clock_in_time/clock_out_time
+Residence expiry alerts	HIGH	❌	Trigger on update + interval check
+Backup/Restore consistency	HIGH	❌	Unify/complete logic in all places
+Schema mismatches	HIGH	❌	Migration & code/schema audit
+
+Attachments
+Screenshots of error messages and failed UI operations
+
+Terminal logs showing error traces
+
+Request
+Please prioritize these issues as they are blocking production deployment.
+If you need additional database dumps, config files, or a live session to debug together, let me know.
+
+Thank you for your support and prompt attention!

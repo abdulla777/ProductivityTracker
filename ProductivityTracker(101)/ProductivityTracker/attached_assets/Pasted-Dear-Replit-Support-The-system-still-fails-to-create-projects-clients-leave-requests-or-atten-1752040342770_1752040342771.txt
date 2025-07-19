@@ -1,0 +1,40 @@
+Dear Replit Support,
+
+The system still fails to create projects, clients, leave requests, or attendance records through the frontend. The following critical issues remain unresolved:
+
+❌ Project creation fails with `Invalid request method /api/projects`
+❌ Client creation fails with `Invalid request method /api/clients`
+❌ Leave requests fail with `Invalid request method /api/leave-requests`
+❌ Attendance registration fails, and check-in/out times are not saved
+
+From the backend terminal, the logs confirm the frontend is sending malformed or incorrect HTTP requests.
+
+✔️ However, when we test the same endpoints using curl, all POST requests succeed, and the data is stored correctly.
+
+This indicates that the frontend's fetch() API is either:
+- Sending the wrong HTTP method (e.g., GET instead of POST),
+- Not including the session cookie properly (causing 401 errors),
+- Or missing required headers (Content-Type: application/json).
+
+Please do the following urgently:
+
+1. Review all frontend `fetch` or `apiRequest` methods for:
+   - Correct HTTP method (e.g., POST, PUT, DELETE),
+   - Proper headers (especially `Content-Type` and cookie),
+   - Correct endpoint path (should not have typos like `.projects` or missing slashes),
+   - Ensure all requests are authenticated (include session/cookie/token properly).
+
+2. Fix project creation: Ensure the request uses POST and includes `createdBy` or extract from session automatically on the backend.
+
+3. Fix client creation and leave request forms: Validate frontend input fields are correctly passed as JSON and the HTTP method is POST.
+
+4. Attendance: Ensure time format is sent correctly (e.g., "HH:MM") and stored with timestamps. Currently, no timestamps are saved.
+
+Please verify all fetch calls match this working curl format:
+
+```bash
+curl -X POST http://localhost:5000/api/projects \
+  -H "Content-Type: application/json" \
+  -d '{"title":"test","description":"desc", ...}' \
+  -b session_cookie.txt
+Let me know as soon as it's resolved. This is urgent for production deploymen
